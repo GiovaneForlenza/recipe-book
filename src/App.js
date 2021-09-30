@@ -1,6 +1,6 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
-import Recepies from './components/Recepies'
+// import Recepies from './components/Recepies'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Home from './pages/Home'
 import SingleRecepie from './pages/SingleRecepie'

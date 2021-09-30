@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom'
 import recepies from '../recepies'
 import Image from '../components/Image';
-import { AiOutlineClockCircle } from 'react-icons/ai'
+import SingleRecepieInfo from '../components/SingleRecepieInfo';
+import Ingredients from '../components/Ingredients';
+import Steps from '../components/Steps';
 
 
 const SingleRecepie = () => {
@@ -12,7 +14,6 @@ const SingleRecepie = () => {
 
     useEffect(() => {
         recepies.map((recepie) => {
-            // console.log(recepie.id);
             if (recepie.id == id) {
                 setRecepie(recepie)
                 setFoundRecepie(true)
@@ -26,23 +27,15 @@ const SingleRecepie = () => {
 
         <main>
             <section className="menu section">
-                <div className="title">
-                    <h2>{singleRecepie.title}</h2>
-                    <div className="underline"></div>
-                </div>
                 <div className="single-recepie">
-                    <div className="img">
-                        <Image img={singleRecepie.img} />
+                    <Image img={singleRecepie.img} />
+                    <div className="recepie-info">
+                        <SingleRecepieInfo recepie={singleRecepie} />
                     </div>
-                    <div className="info">
-                        <div className="title">
-                            <h1>{singleRecepie.title}</h1>
-                            <h3><AiOutlineClockCircle /> {singleRecepie.prepTime}</h3>
-                        </div>
-                        <div className="desc">
-                            <p>{singleRecepie.desc}</p>
-                        </div>
-                    </div>
+                </div>
+                <div className="ingredients">
+                    <Ingredients recepie={singleRecepie} />
+                    <Steps recepie={singleRecepie} />
                 </div>
             </section>
         </main>
