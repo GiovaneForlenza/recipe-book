@@ -58,16 +58,16 @@ code {
 }
 
 .section {
-  width: 90vw;
+  width: 80vw;
   margin: 0 auto;
-  border: 1px solid #000;
 }
 
-div .title {
+.section .title {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin-bottom: 50px;
 }
 
 .underline {
@@ -78,12 +78,83 @@ div .title {
 
 .recepies {
   display: grid;
-  gap: 3rem 2rem;
-  grid-template-columns: 325px 350px;
+  margin: 0 auto;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
   justify-items: center;
+  max-width: 80%;
+  /* border: 1px solid #000; */
+}
+
+.recepie {
+  display: grid;
+  gap: 3rem 2rem;
+  grid-template-columns: 225px 1fr;
+  justify-items: center;
+  padding: 20px;
+  /* border: 1px solid #000; */
+}
+
+.recepie-img img {
+  width: 100%;
+  border: 5px solid var(--clr-gold);
+  border-radius: 5px;
+}
+
+.recepie-info {
+  width: 300px;
+  /* border: 1px solid #000; */
+}
+
+.recepie-info .title {
+  border-bottom: 1px dashed var(--clr-gold);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  /* border: 1px solid #000; */
+}
+
+.recepie-info .btn-blue {
+  padding: 10px 20px;
+  margin: 20px;
+  background: #A5D5F8;
+  color: #2E384D;
+  border: none;
+  font-size: 20px;
+  /* font-weight: 600; */
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.desc-btn {
+  /* border: 1px solid #000; */
+}
+
+
+
+.single-recepie {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
   border: 1px solid #000;
 }
 
-.recepies h1 {
+.single-recepie .img {
+  width: 30%;
   border: 1px solid #000;
+  margin-right: 50px;
+}
+
+.single-recepie .info {
+  width: 60%;
+  border: 1px solid #000;
+}
+
+.single-recepie .info .title {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  flex-direction: row;
 }

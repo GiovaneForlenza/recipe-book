@@ -1,18 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
 import Recepies from './components/Recepies'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import Home from './pages/Home'
+import SingleRecepie from './pages/SingleRecepie'
 
 function App() {
   return (
-    <main>
-      <section className="menu section">
-        <div className="title">
-          <h2>Menu</h2>
-          <div className="underline"></div>
-        </div>
-        <Recepies />
-      </section>
-    </main>
+    <Router>
+      <Switch>
+        <Route exact path='/'>
+          <Home />
+        </Route>
+        <Route path='/recepie/:id'>
+          <SingleRecepie />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
