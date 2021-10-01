@@ -5,6 +5,7 @@ import Image from '../components/Image';
 import SingleRecepieInfo from '../components/SingleRecepieInfo';
 import Ingredients from '../components/Ingredients';
 import Steps from '../components/Steps';
+import Spacer from '../components/Spacer';
 
 
 const SingleRecepie = () => {
@@ -38,6 +39,7 @@ const SingleRecepie = () => {
                     <Steps recepie={singleRecepie} />
                 </div>
             </section>
+            <Spacer />
         </main>
     )
 }

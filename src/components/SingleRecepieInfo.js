@@ -16,7 +16,6 @@ const SingleRecepieInfo = ({ recepie }) => {
         for (let i = 0; i < recepie.spicy; i++) {
             spicyLevel.push(i)
         }
-        console.log(spicyLevel);
     }
     return (<>
         <div className="title">

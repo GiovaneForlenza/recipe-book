@@ -65,7 +65,14 @@ code {
 
 .section {
   width: 70vw;
+  height: 101vh;
   margin: 0 auto;
+  scroll-behavior: smooth;
+  margin-bottom: 50px;
+}
+
+.spacer {
+  height: 150px;
 }
 
 .menu {
@@ -189,12 +196,6 @@ HOME
   margin: 10px 0;
 }
 
-/* .recepie-info p {
-  margin-bottom: 20px;
-  height: 120px;
-  overflow: hidden;
-} */
-
 .recepie-info .btn-blue {
   padding: 10px 20px;
   margin: 20px 0 0 0;
@@ -202,7 +203,6 @@ HOME
   color: #2E384D;
   border: none;
   font-size: 20px;
-  /* font-weight: 600; */
   border-radius: 10px;
   text-decoration: none;
 }
@@ -219,7 +219,6 @@ HOME
 
 .single-recepie .recepie-info {
   justify-content: start;
-  /* width: 40%; */
   width: auto;
   border-radius: 10px;
   overflow: hidden;
@@ -240,7 +239,6 @@ HOME
 
 
 .single-recepie .info {
-  border: 1px solid #000;
   height: 100%;
   padding: 30%;
 }
@@ -261,8 +259,6 @@ HOME
 .division-lable {
   margin-bottom: 30px;
   display: flex;
-  /* justify-content: center;
-  */
   align-items: center;
   flex-direction: row;
 
@@ -276,7 +272,6 @@ HOME
 
 .line {
   height: 3px;
-  /* width: 70%; */
   width: fill;
   background: hsl(210, 22%, 49%);
 }
