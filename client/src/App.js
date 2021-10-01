@@ -4,6 +4,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Home from './pages/Home'
 import SingleRecepie from './pages/SingleRecepie'
+import CreateRecepie from './pages/CreateRecepie';
 
 function App() {
   return (
@@ -14,6 +15,9 @@ function App() {
         </Route>
         <Route path='/recepie/:id'>
           <SingleRecepie />
+        </Route>
+        <Route path='/create/'>
+          <CreateRecepie />
         </Route>
       </Switch>
     </Router>
