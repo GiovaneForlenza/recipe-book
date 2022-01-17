@@ -29,8 +29,11 @@ body {
 #root {
   min-width: 500px;
   background: #f1f5f8;
-  padding-top: 50px;
+  // padding-top: 50px;
   min-height: 100vh;
+  main {
+    width: 96%;
+  }
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
