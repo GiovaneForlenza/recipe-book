@@ -4,7 +4,7 @@ const Categories = ({ categories, ingredients, filterItems, categoryBtn, ingredi
     return (<>
         <div className='btn-container'>
             {categories.map((category, index) => {
-                return <button className={`${index === categoryBtn && 'active-btn'} filter-btn`} key={index} onClick={() => { filterItems(category, index, undefined) }}>
+                return <button className={`${index === categoryBtn && 'active-btn'} filter-btn`} key={index} onClick={() => { filterItems(category, index) }}>
                     {category}
                 </button>
             })}

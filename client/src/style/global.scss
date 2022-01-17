@@ -1,0 +1,60 @@
+$clrWhite: #fff;
+$clrBackgroundBlue: #f1f5f8;
+$clrAccentBlue: #607d98;
+$clrGold: #c59d5f;
+
+$clrBlack: #222;
+
+$boxShadow: 0 3px 10px rgba(0, 0, 0, 0.089);
+$borderRadius: 10px;
+
+$recepiesGridTemplate: repeat(auto-fit, minmax(15rem, 35rem));
+
+$transition: all 0.3s linear;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+#root {
+  min-width: 500px;
+  background: #f1f5f8;
+  padding-top: 50px;
+  min-height: 100vh;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+
+.link-btn {
+  padding: 10px 20px;
+  background: $clrGold;
+  color: #000;
+  border: none;
+  font-size: 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: 0.5s;
+  &:hover {
+    color: #fff;
+  }
+}

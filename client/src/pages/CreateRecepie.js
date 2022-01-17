@@ -8,7 +8,6 @@ function CreateRecepie() {
 
 
     const createRecepie = () => {
-        console.log('a');
         Axios.post('http://localhost:3005/a', { name: recepieName })
             .then(() => {
                 alert('successfull insert')

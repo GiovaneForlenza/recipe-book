@@ -1,0 +1,81 @@
+@import "../global";
+
+.recepie-header {
+  height: 550px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .header-container {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+    // width: 80%;
+    height: 100%;
+    background: #fff;
+    border-radius: $borderRadius;
+    overflow: hidden;
+    box-shadow: $boxShadow;
+    .recepie-info {
+      justify-content: start;
+      width: 330px;
+      h1 {
+        font-size: 40px;
+      }
+    }
+    .recepie-img {
+      width: 600px;
+      margin-right: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .header-container {
+    grid-template-columns: 1fr !important;
+    .recepie-img {
+      margin-right: 0 !important;
+    }
+  }
+}
+@media screen and (max-width: 870px) {
+  .header-container {
+    .recepie-img {
+      width: 100% !important;
+    }
+  }
+}
+
+.instructions {
+  margin-top: 50px;
+  padding: 50px;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: $borderRadius;
+  overflow: hidden;
+  box-shadow: $boxShadow;
+}
+
+.division-lable {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  h3 {
+    font-size: 30px;
+    margin-right: 20px;
+    color: $clrAccentBlue;
+  }
+  .line {
+    height: 3px;
+    width: fill;
+    background: $clrAccentBlue;
+  }
+}
+
+.items-list {
+  margin-bottom: 50px;
+  li {
+    font-size: 20px;
+    margin: 20px;
+  }
+}

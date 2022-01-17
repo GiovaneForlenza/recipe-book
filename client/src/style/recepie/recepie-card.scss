@@ -1,0 +1,57 @@
+@import "../global";
+
+.recepie-card {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  background: #fff;
+  border-radius: $borderRadius;
+  overflow: hidden;
+  box-shadow: $boxShadow;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 1200px) {
+  .recepie-card {
+    grid-template-columns: 1fr;
+  }
+
+  .recepie-card .recepie-img,
+  .single-recepie .recepie-img {
+    height: 300px;
+  }
+
+  .recepie-info {
+    .recepie-name {
+      span {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+.recepie-info {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  background: #fff;
+  padding: 10px 30px 10px 10px;
+  box-sizing: border-box;
+  .recepie-name {
+    border-bottom: 1px dashed $clrGold;
+    width: 100%;
+    margin-bottom: 10px;
+    span {
+      font-size: 30px;
+      font-weight: bold;
+    }
+  }
+  .recepie-information {
+    margin-bottom: 10px;
+    h3 {
+      margin: 10px 0;
+      font-size: 20px;
+    }
+  }
+}

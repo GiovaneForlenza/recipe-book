@@ -1,0 +1,9 @@
+@import "../global.scss";
+
+.recepies {
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: $recepiesGridTemplate;
+  gap: 3rem;
+  justify-content: center;
+}

@@ -1,0 +1,18 @@
+@import "../global.scss";
+
+.recepie-img {
+  height: 100%;
+  overflow: hidden;
+  background-position: left center;
+  border: 5px solid $clrGold;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  img {
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+  }
+}

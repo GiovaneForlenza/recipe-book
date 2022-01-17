@@ -1,23 +1,22 @@
-const express = require('express')
-const app = express()
-const mysql = require('mysql')
-const bodyParser = require('body-parser');
-const cors = require('cors')
+const express = require("express");
+const app = express();
+const mysql = require("mysql");
+const bodyParser = require("body-parser");
+const cors = require("cors");
 
-app.use(cors)
+app.use(cors);
 app.use(express.json());
-app.use(express.urlencoded({
-    extended: true
-}));
-
+app.use(
+  express.urlencoded({
+    extended: true,
+  })
+);
 
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'Tobinho1',
-    database: 'recepie_book'
+  host: "localhost",
+  user: "root",
+  database: "recepie_book",
 });
-
 
 // db.connect((err) => {
 //     if (err) throw err
@@ -41,11 +40,11 @@ const db = mysql.createConnection({
 
 // });
 
-app.get('/', (req, res) => {
-    db.query('INSERT INTO recepies (name) VALUES ("AA");')
-    res.send('hello');
-})
+app.get("/", (req, res) => {
+  db.query('INSERT INTO recepies (name) VALUES ("AA");');
+  res.send("hello");
+});
 
 app.listen(3005, () => {
-    console.log('running on 3005');
+  console.log("running on 3005");
 });

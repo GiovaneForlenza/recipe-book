@@ -1,0 +1,71 @@
+@import "./global.scss";
+
+.section {
+  width: 70vw;
+  margin: 0 auto;
+  scroll-behavior: smooth;
+  margin-bottom: 50px;
+  min-width: 500px;
+}
+
+@media screen and (max-width: 500px) {
+  .section {
+    padding: 30px;
+    box-sizing: border-box;
+  }
+}
+
+.spacer {
+  height: 50px;
+}
+
+.page-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+
+.underline {
+  width: 80px;
+  height: 4px;
+  margin-top: 5px;
+  background-color: $clrGold;
+}
+
+.btn-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-bottom: 20px;
+  min-width: 350px;
+  width: 50%;
+}
+
+.filter-btn {
+  background: transparent;
+  border-color: transparent;
+  font-size: 1rem;
+  text-transform: capitalize;
+  margin: 0 0.5rem;
+  letter-spacing: 1px;
+  padding: 0.375rem 0.75rem;
+  border: 2px solid $clrGold;
+  cursor: pointer;
+  transition: $transition;
+  border-radius: $borderRadius;
+  margin-bottom: 20px;
+}
+
+.filter-btn:hover {
+  background: $clrGold;
+  color: $clrWhite;
+}
+
+.active-btn {
+  background: $clrGold;
+  color: $clrWhite;
+}

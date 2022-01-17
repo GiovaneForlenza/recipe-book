@@ -4,7 +4,7 @@ const ItemsList = ({ items }) => {
     return (
         <div className="items-list">
             {items.map((item) => {
-                return <p>{item}</p>
+                return <li>{item}</li>
             })}
         </div>
     )
