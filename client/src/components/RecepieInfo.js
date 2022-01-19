@@ -8,7 +8,7 @@ const RecepieInfo = ({ recepie }) => {
     <section className="recepie-info">
       <SingleRecepieInfo recepie={recepie} />
       <Link to={`/recepie/${recepie.id}`} className="link-btn">
-        Full Recepie
+        View full recepie
       </Link>
     </section>
   );

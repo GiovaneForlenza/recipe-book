@@ -47,7 +47,7 @@
 
 .instructions {
   margin-top: 50px;
-  padding: 50px;
+  padding: 20px;
   box-sizing: border-box;
   background: #fff;
   border-radius: $borderRadius;
@@ -65,13 +65,15 @@
     margin-right: 20px;
     color: $clrAccentBlue;
   }
+}
+
+@media screen and (min-width: 700px) {
   .line {
     height: 3px;
     width: fill;
     background: $clrAccentBlue;
   }
 }
-
 .items-list {
   margin-bottom: 50px;
   li {

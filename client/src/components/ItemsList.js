@@ -1,13 +1,23 @@
-import React from 'react'
+import React from "react";
 
-const ItemsList = ({ items }) => {
-    return (
-        <div className="items-list">
-            {items.map((item) => {
-                return <li>{item}</li>
-            })}
-        </div>
-    )
-}
+const ItemsList = ({ items, isOl }) => {
+  return (
+    <div className="items-list">
+      {isOl ? (
+        <ol>
+          {items.map((item) => {
+            return <li>{item}</li>;
+          })}
+        </ol>
+      ) : (
+        <>
+          {items.map((item) => {
+            return <li>{item}</li>;
+          })}
+        </>
+      )}
+    </div>
+  );
+};
 
-export default ItemsList
+export default ItemsList;
