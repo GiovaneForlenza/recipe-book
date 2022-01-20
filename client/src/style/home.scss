@@ -1,15 +1,15 @@
 @import "./global.scss";
 
 .section {
-  // width: 100%;
+  width: 100%;
   scroll-behavior: smooth;
   margin-bottom: 50px;
 }
 
 @media screen and (max-width: 500px) {
-  .section {
-    max-width: 320px;
-    padding: 30px;
+  .section.padding {
+    // max-width: 320px;
+    padding: 10px;
     box-sizing: border-box;
   }
 }
@@ -40,7 +40,7 @@
   justify-content: center;
   margin: auto;
   margin-bottom: 20px;
-  min-width: 350px;
+  min-width: 310px;
   width: 50%;
 }
 

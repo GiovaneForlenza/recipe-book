@@ -94,7 +94,7 @@ function Home() {
 
   return (
     <main>
-      <section className="menu section">
+      <section className="menu section padding">
         <div className="page-header">
           <div className="page-title">
             <h2>Menu</h2>

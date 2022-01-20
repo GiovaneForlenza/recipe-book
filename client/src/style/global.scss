@@ -6,7 +6,7 @@ $clrGold: #ddab61;
 $clrBlack: #222;
 
 $boxShadow: 0 3px 10px rgba(0, 0, 0, 0.089);
-$borderRadius: 10px;
+$borderRadius: 0px;
 
 $recepiesGridTemplate: repeat(auto-fit, minmax(15rem, 35rem));
 
@@ -27,12 +27,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 #root {
-  min-width: 500px;
+  // min-width: 320px;
   background: #f1f5f8;
   // padding-top: 50px;
   min-height: 100vh;
   main {
-    width: 96%;
+    // width: 96%;
   }
 }
 code {
@@ -46,6 +46,7 @@ code {
   justify-content: center;
   flex-direction: column;
   margin-bottom: 50px;
+  padding-top: 10px;
 }
 
 .link-btn {

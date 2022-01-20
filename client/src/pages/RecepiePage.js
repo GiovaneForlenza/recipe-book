@@ -7,6 +7,8 @@ import Ingredients from "../components/Ingredients";
 import Steps from "../components/Steps";
 import Spacer from "../components/Spacer";
 
+import { AiOutlineHeart, AiTwotoneHeart } from "react-icons/ai";
+
 import "../style/global.scss";
 import "../style/recepie/recepie-page.scss";
 import "../style/recepie/recepie-img.scss";
@@ -40,11 +42,51 @@ const SingleRecepie = () => {
           </Link>
         </div>
 
-        <div className="recepie">
+        <div className="single-recepie content">
+          <div className="header">
+            <div className="img">
+              <img src={singleRecepie.img} alt="" />
+            </div>
+            <div className="header-info">
+              <div className="title">
+                <h1>{singleRecepie.title}</h1>
+              </div>
+              <div className="details">
+                <div className="left">
+                  <div className="line">
+                    Level: <span>Easy</span>
+                  </div>
+                  <div className="line">
+                    Yield: <span>{singleRecepie.servings} servings</span>
+                  </div>
+                </div>
+                <div className="right">
+                  <div className="line">
+                    Total: <span>{singleRecepie.totalTime} min</span>
+                  </div>
+                  <div className="line">
+                    Cook: <span>{singleRecepie.cookTime} min</span>
+                  </div>
+                  <div className="line">
+                    Prep: <span>{singleRecepie.prepTime} min</span>
+                  </div>
+                </div>
+              </div>
+              <div className="actions">
+                <div className="save-recepie">
+                  {AiOutlineHeart}
+                  <div className="text">Favorite Recepie</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* <div className="recepie">
           <div className="recepie-header">
             <div className="header-container">
               <Image img={singleRecepie.img} />
-              <div className="recepie-info">
+              <div className="single-recepie-info">
                 <SingleRecepieInfo recepie={singleRecepie} />
               </div>
             </div>
@@ -53,7 +95,7 @@ const SingleRecepie = () => {
             <Ingredients recepie={singleRecepie} />
             <Steps recepie={singleRecepie} />
           </div>
-        </div>
+        </div> */}
       </section>
       <Spacer />
     </main>

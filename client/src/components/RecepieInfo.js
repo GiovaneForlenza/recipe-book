@@ -5,7 +5,7 @@ import "../style/global.scss";
 
 const RecepieInfo = ({ recepie }) => {
   return (
-    <section className="recepie-info">
+    <section className="home-recepie-info">
       <SingleRecepieInfo recepie={recepie} />
       <Link to={`/recepie/${recepie.id}`} className="link-btn">
         View full recepie

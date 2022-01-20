@@ -30,13 +30,13 @@
   }
 }
 
-.recepie-info {
+.home-recepie-info {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   flex-direction: column;
   background: #fff;
-  padding: 10px 30px 10px 10px;
+  padding: 10px 10px 10px 10px;
   box-sizing: border-box;
   .recepie-name {
     border-bottom: 1px dashed $clrGold;
@@ -48,7 +48,7 @@
     }
   }
   .recepie-information {
-    margin-bottom: 10px;
+    // margin-bottom: 10px;
     h3 {
       margin: 10px 0;
       font-size: 20px;
