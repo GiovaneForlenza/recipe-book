@@ -17,10 +17,12 @@ const SingleRecepie = () => {
   const { id } = useParams();
   const [singleRecepie, setRecepie] = useState({});
   const [foundRecepie, setFoundRecepie] = useState(false);
+  const [isRecepieFavorite, setIsRecepieFavorite] = useState(false);
+  const [checkboxesSelected, setcheckboxesSelected] = useState([]);
 
   useEffect(() => {
     recepies.map((recepie) => {
-      if (recepie.id == id) {
+      if (recepie.id === id) {
         setRecepie(recepie);
         setFoundRecepie(true);
       }
@@ -29,10 +31,26 @@ const SingleRecepie = () => {
 
   if (!foundRecepie) return <h2>No recepie found</h2>;
 
+  function handleClick() {
+    setIsRecepieFavorite(!isRecepieFavorite);
+  }
+
+  function handleCheckboxClick(id) {
+    const isSelected = checkboxesSelected.includes(id);
+    if (!isSelected) {
+      setcheckboxesSelected([...checkboxesSelected, id]);
+    } else {
+      let checkedBoxes = checkboxesSelected.filter(
+        (checkBox) => checkBox !== id
+      );
+      setcheckboxesSelected(checkedBoxes);
+    }
+  }
+
   return (
     <main>
       <section className="section">
-        <div className="page-header">
+        {/* <div className="page-header">
           <div className="page-title">
             <h2>Recepie</h2>
             <div className="underline"></div>
@@ -40,9 +58,9 @@ const SingleRecepie = () => {
           <Link to={`/`} className="link-btn">
             Back Home
           </Link>
-        </div>
+        </div> */}
 
-        <div className="single-recepie content">
+        <div className="single-recepie">
           <div className="header">
             <div className="img">
               <img src={singleRecepie.img} alt="" />
@@ -54,7 +72,7 @@ const SingleRecepie = () => {
               <div className="details">
                 <div className="left">
                   <div className="line">
-                    Level: <span>Easy</span>
+                    Level: <span>{singleRecepie.dificulty}</span>
                   </div>
                   <div className="line">
                     Yield: <span>{singleRecepie.servings} servings</span>
@@ -73,11 +91,57 @@ const SingleRecepie = () => {
                 </div>
               </div>
               <div className="actions">
-                <div className="save-recepie">
-                  {AiOutlineHeart}
+                <div className="save-recepie" onClick={handleClick}>
+                  {isRecepieFavorite ? (
+                    <AiTwotoneHeart className="heart-icon filled icon" />
+                  ) : (
+                    <AiOutlineHeart className="heart-icon icon" />
+                  )}
                   <div className="text">Favorite Recepie</div>
                 </div>
               </div>
+            </div>
+          </div>
+          <div className="content">
+            <div className="ingredients">
+              <div className="title">
+                <h1>Ingredients</h1>
+              </div>
+              {singleRecepie.ingredients.map((ingredient, id) => {
+                return (
+                  <div className="line">
+                    <input
+                      type="checkbox"
+                      id={`checkbox${id}`}
+                      className="checkbox"
+                      onClick={() => handleCheckboxClick(id)}
+                    ></input>
+                    <div
+                      className={`ingredient ${
+                        checkboxesSelected.includes(id) ? "crossed" : ""
+                      }`}
+                      id={`ingredient${id}`}
+                    >
+                      {ingredient}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+            <div className="intructions">
+              <div className="title">
+                <h1>Intructions</h1>
+              </div>
+              {singleRecepie.steps.map((step, id) => {
+                return (
+                  <div className="step">
+                    <div className="number">{id + 1}</div>
+                    <div className="intruction">
+                      <span>{step}</span>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -91,9 +155,9 @@ const SingleRecepie = () => {
               </div>
             </div>
           </div>
+          <Ingredients recepie={singleRecepie} />
           <div className="instructions">
-            <Ingredients recepie={singleRecepie} />
-            <Steps recepie={singleRecepie} />
+          <Steps recepie={singleRecepie} />
           </div>
         </div> */}
       </section>

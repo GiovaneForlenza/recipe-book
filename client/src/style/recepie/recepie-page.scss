@@ -26,7 +26,7 @@
 }
 
 @media screen and (max-width: 500px) {
-  .single-recepie.content {
+  .single-recepie {
     .recepie-header {
       z-index: 2;
       width: 95%;
@@ -76,6 +76,7 @@
         .title {
           text-align: center;
           width: 80%;
+          margin-top: 10px;
           h1 {
             font-weight: bold;
             font-size: 30px;
@@ -111,9 +112,74 @@
             padding: 10px;
             box-sizing: border-box;
             border-radius: 50px;
-            background: #e00d32;
-            color: white;
-            font-weight: 700;
+            background: #e60f3678;
+            color: #d8062c;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.5s;
+            .icon {
+              margin-right: 10px;
+              width: 30px;
+              height: 30px;
+            }
+          }
+        }
+      }
+    }
+    .content {
+      .ingredients {
+        background: #fff;
+        .line {
+          display: flex;
+          align-items: flex-start;
+          justify-content: flex-start;
+          padding: 10px;
+          box-sizing: border-box;
+          .checkbox {
+            min-width: 20px;
+            min-height: 20px;
+            margin-right: 15px;
+            &:hover {
+              cursor: pointer;
+            }
+          }
+          .ingredient.crossed {
+            text-decoration: line-through;
+          }
+        }
+      }
+      .ingredients,
+      .intructions {
+        width: 100%;
+        background: #fff;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+      .intructions {
+        margin-top: 30px;
+        .step {
+          // border: 1px solid #000;
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between;
+          margin: 20px 0;
+          padding: 15px;
+          box-sizing: border-box;
+          box-shadow: $boxShadow;
+          .number {
+            width: 10%;
+            color: #e8523d;
+            font-size: 20px;
+            font-weight: 600;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.24);
+
+            // border: 1px solid #000;
+          }
+          .intruction {
+            width: 85%;
+            // border: 1px solid #000;
           }
         }
       }

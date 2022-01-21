@@ -30,11 +30,12 @@ CHICKEN
       "Turn off the head, add the creamcheese mixture and mix well",
       "Serve the dish over rice and add Hickory Sticks to taste",
     ],
-    prepTime: "15",
-    cookTime: "30",
-    totalTime: "45",
-    spicy: 0,
+    dificulty: "Hard",
     servings: 4,
+    totalTime: "45",
+    cookTime: "30",
+    prepTime: "15",
+    spicy: 0,
   },
   // Chicken Teryaki
   {
@@ -54,10 +55,12 @@ CHICKEN
       "3 tablespoons corn starch + 3 tablespoons cold water",
     ],
     steps: [1, 2, 3],
-    prepTime: "15 min",
-    cookTime: "30 min",
-    spicy: 0,
+    dificulty: "Easy",
     servings: 4,
+    totalTime: "45",
+    cookTime: "30",
+    prepTime: "15",
+    spicy: 0,
   },
   // Fried Chicken Brest
   {
@@ -87,10 +90,12 @@ CHICKEN
       "Turn off the head, add the creamcheese mixture and mix well",
       "Serve the dish over rice and add Hickory Sticks to taste",
     ],
-    prepTime: "15 min",
-    cookTime: "30 min",
-    spicy: 0,
+    dificulty: "Easy",
     servings: 4,
+    totalTime: "45",
+    cookTime: "30",
+    prepTime: "15",
+    spicy: 0,
   },
   // Parmegiana
   {
@@ -99,7 +104,12 @@ CHICKEN
     category: "lunch/dinner",
     price: 15.99,
     img: "https://www.unileverfoodsolutions.com.br/dam/global-ufs/mcos/SLA/calcmenu/recipes/BR-recipes/chicken-&-other-poultry-dishes/strogonoff-de-frango/main-header.jpg",
-    desc: `I'm baby woke mlkshk wolf bitters live-edge blue bottle, hammock freegan copper mug whatever cold-pressed `,
+    desc: `I'm baby woke mlkshk
+    prepTime: "15 min",
+    cookTime: "30 min",
+    spicy: 0,
+    servings: 4,
+    dificulty: "Easy", wolf bitters live-edge blue bottle, hammock freegan copper mug whatever cold-pressed `,
     ingredients: [
       "4 boneless chicken breasts, diced",
       "350ml totamo sauce",
@@ -120,10 +130,12 @@ CHICKEN
       "Turn off the head, add the creamcheese mixture and mix well",
       "Serve the dish over rice and add Hickory Sticks to taste",
     ],
-    prepTime: "15 min",
-    cookTime: "30 min",
-    spicy: 0,
+    dificulty: "Easy",
     servings: 4,
+    totalTime: "45",
+    cookTime: "30",
+    prepTime: "15",
+    spicy: 0,
   },
   // Chicken w/ Orange Sauce
   //   {
