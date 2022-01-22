@@ -12,7 +12,7 @@ import "../style/global.scss";
 import "../style/recepie/recepie-page.scss";
 import "../style/recepie/recepie-img.scss";
 import "../style/recepie/recepie-header.scss";
-import Header from "../components/recepie/recepieCard/Header";
+import Header from "../components/recepie/Header";
 import Navigation from "../components/Navigation";
 
 const SingleRecepie = () => {

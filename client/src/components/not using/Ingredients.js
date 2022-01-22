@@ -6,7 +6,7 @@ const Ingredients = ({ recepie }) => {
   const [ingredients, setIngredients] = React.useState(recepie.ingredients);
   return (
     <>
-      <Division text="Ingredients" />
+      {/* <Division text="Ingredients" /> */}
       <ItemsList items={ingredients} />
     </>
   );

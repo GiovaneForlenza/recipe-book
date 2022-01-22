@@ -1,8 +1,8 @@
 import React from "react";
-import RecepieCard from "./recepieCard/RecepieCard";
+import RecepieCard from "../not using/RecepieCard";
 
 import "../../style/recepie/recepies.scss";
-import Header from "./recepieCard/Header";
+import Header from "./Header";
 
 const Recepies = ({ recepies }) => {
   if (recepies.length < 1) {

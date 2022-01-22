@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { AiOutlineHeart, AiFillHeart, AiTwotoneStar } from "react-icons/ai";
 import { BsStarHalf } from "react-icons/bs";
 
-import "../../../style/recepie/recepie-header.scss";
+import "../../style/recepie/recepie-header.scss";
 
 function Header({ recepie, caller }) {
   const [isRecepieFavorite, setIsRecepieFavorite] = useState(false);
