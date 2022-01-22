@@ -39,11 +39,13 @@ const SingleRecepie = () => {
     const isSelected = checkboxesSelected.includes(id);
     if (!isSelected) {
       setcheckboxesSelected([...checkboxesSelected, id]);
+      document.getElementById(`checkbox${id}`).checked = true;
     } else {
       let checkedBoxes = checkboxesSelected.filter(
         (checkBox) => checkBox !== id
       );
       setcheckboxesSelected(checkedBoxes);
+      document.getElementById(`checkbox${id}`).checked = false;
     }
   }
 
@@ -121,6 +123,7 @@ const SingleRecepie = () => {
                         checkboxesSelected.includes(id) ? "crossed" : ""
                       }`}
                       id={`ingredient${id}`}
+                      onClick={() => handleCheckboxClick(id)}
                     >
                       {ingredient}
                     </div>

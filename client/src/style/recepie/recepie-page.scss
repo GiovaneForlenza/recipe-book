@@ -111,9 +111,9 @@
             margin: 20px 0;
             padding: 10px;
             box-sizing: border-box;
-            border-radius: 50px;
-            background: #e60f3678;
-            color: #d8062c;
+            border-radius: 10px;
+            background: #e00e32;
+            color: #fff;
             font-weight: 600;
             display: flex;
             align-items: center;
@@ -137,13 +137,13 @@
           justify-content: flex-start;
           padding: 10px;
           box-sizing: border-box;
+          &:hover {
+            cursor: pointer;
+          }
           .checkbox {
             min-width: 20px;
             min-height: 20px;
             margin-right: 15px;
-            &:hover {
-              cursor: pointer;
-            }
           }
           .ingredient.crossed {
             text-decoration: line-through;
