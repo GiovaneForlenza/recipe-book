@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import recepies from "../recepies";
+
 // import Image from "../components/Image";
 // import SingleRecepieInfo from "../components/recepie/SingleRecepieInfo";
 // import Ingredients from "../components/Ingredients";
@@ -12,6 +13,7 @@ import "../style/recepie/recepie-page.scss";
 import "../style/recepie/recepie-img.scss";
 import "../style/recepie/recepie-header.scss";
 import Header from "../components/recepie/recepieCard/Header";
+import Navigation from "../components/Navigation";
 
 const SingleRecepie = () => {
   const { id } = useParams();
@@ -52,9 +54,7 @@ const SingleRecepie = () => {
             <h2>Recepie</h2>
             <div className="underline"></div>
           </div>
-          <Link to={`/`} className="link-btn">
-            Back Home
-          </Link>
+          <Navigation />
         </div>
 
         <div className="single-recepie">
