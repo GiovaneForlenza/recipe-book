@@ -1,0 +1,90 @@
+@import "../global";
+.header {
+  .img {
+    z-index: 1;
+    img {
+      width: 100%;
+    }
+  }
+  .header-info {
+    background: #fff;
+    border-radius: $borderRadius;
+    overflow: hidden;
+    box-shadow: $boxShadow;
+    width: 90%;
+    transform: translateY(-40px);
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    .title {
+      text-align: center;
+      width: 80%;
+      margin-top: 10px;
+      h1 {
+        font-weight: bold;
+        font-size: 30px;
+      }
+    }
+    .details {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      border-top: 1px solid #e0e0e0;
+      border-bottom: 1px solid #e0e0e0;
+      .left {
+        border-right: 1px solid #e0e0e0;
+      }
+      .left,
+      .right {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-around;
+        flex-direction: column;
+        width: 50%;
+        padding: 10px;
+        box-sizing: border-box;
+        height: 90px;
+      }
+    }
+    .actions {
+      width: 90%;
+      .view-recepie {
+        background: $clrGold;
+        &:hover {
+          color: #fff;
+        }
+        .link-btn {
+          color: #000;
+          text-decoration: none;
+          transition: 0.5s;
+        }
+      }
+      .view-recepie,
+      .save-recepie {
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.5s;
+        margin: 20px 0;
+        padding: 10px;
+        box-sizing: border-box;
+        border-radius: 10px;
+        .icon {
+          margin-right: 10px;
+          width: 30px;
+          height: 30px;
+        }
+      }
+      .save-recepie {
+        background: #e00e32;
+        color: #fff;
+      }
+    }
+  }
+}

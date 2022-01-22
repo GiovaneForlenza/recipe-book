@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import SingleRecepieInfo from "./SingleRecepieInfo";
-import "../style/global.scss";
+import "../../style/global.scss";
 
 const RecepieInfo = ({ recepie }) => {
   return (

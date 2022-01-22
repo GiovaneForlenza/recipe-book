@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Recepies from "../components/Recepies";
+import Recepies from "../components/recepie/Recepies";
 import recepies from "../recepies";
 import Categories from "../components/Categories";
 import Spacer from "../components/Spacer";
@@ -100,17 +100,17 @@ function Home() {
             <h2>Menu</h2>
             <div className="underline"></div>
           </div>
-          <Categories
+          {/* <Categories
             categories={categories}
             ingredients={ingredients}
             filterItems={filterItems}
             categoryBtn={selectedCategoryBtn}
             ingredientBtn={selectedIngredientBtn}
-          />
+          /> */}
         </div>
         <Recepies recepies={itemsInMenu} />
       </section>
-      <Spacer />
+      {/* <Spacer /> */}
     </main>
   );
 }

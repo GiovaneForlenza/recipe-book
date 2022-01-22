@@ -26,164 +26,57 @@
 }
 
 @media screen and (max-width: 500px) {
-  .single-recepie {
-    .recepie-header {
-      z-index: 2;
-      width: 95%;
-      margin: auto;
-      .header-container {
-        display: grid;
-        gap: 1rem;
-        grid-template-columns: 1fr 1fr;
-        background: #fff;
-        border-radius: $borderRadius;
-        overflow: hidden;
-        box-shadow: $boxShadow;
-        width: 100%;
-        .single-recepie-info {
-          display: relative;
-          justify-content: start;
-          h1 {
-            font-size: 40px;
-          }
-        }
-        .recepie-img {
-          width: 600px;
-          margin-right: 20px;
-        }
-      }
-    }
-    .header {
-      .img {
-        z-index: 1;
-        img {
-          width: 100%;
-        }
-      }
-      .header-info {
-        background: #fff;
-        border-radius: $borderRadius;
-        overflow: hidden;
-        box-shadow: $boxShadow;
-        width: 90%;
-        transform: translateY(-40px);
-        margin: auto;
+  .content {
+    .ingredients {
+      background: #fff;
+      .line {
         display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        align-items: center;
+        align-items: flex-start;
         justify-content: flex-start;
-        .title {
-          text-align: center;
-          width: 80%;
-          margin-top: 10px;
-          h1 {
-            font-weight: bold;
-            font-size: 30px;
-          }
+        padding: 10px;
+        box-sizing: border-box;
+        &:hover {
+          cursor: pointer;
         }
-        .details {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: center;
+        .checkbox {
+          min-width: 20px;
+          min-height: 20px;
+          margin-right: 15px;
+        }
+        .ingredient {
           width: 100%;
-          border-top: 1px solid #e0e0e0;
-          border-bottom: 1px solid #e0e0e0;
-          .left {
-            border-right: 1px solid #e0e0e0;
-          }
-          .left,
-          .right {
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-around;
-            flex-direction: column;
-            width: 50%;
-            padding: 10px;
-            box-sizing: border-box;
-            height: 90px;
-          }
         }
-        .actions {
-          width: 90%;
-          .save-recepie {
-            margin: 20px 0;
-            padding: 10px;
-            box-sizing: border-box;
-            border-radius: 10px;
-            background: #e00e32;
-            color: #fff;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.5s;
-            .icon {
-              margin-right: 10px;
-              width: 30px;
-              height: 30px;
-            }
-          }
+        .ingredient.crossed {
+          text-decoration: line-through;
         }
       }
     }
-    .content {
-      .ingredients {
-        background: #fff;
-        .line {
-          display: flex;
-          align-items: flex-start;
-          justify-content: flex-start;
-          padding: 10px;
-          box-sizing: border-box;
-          &:hover {
-            cursor: pointer;
-          }
-          .checkbox {
-            min-width: 20px;
-            min-height: 20px;
-            margin-right: 15px;
-          }
-          .ingredient {
-            width: 100%;
-          }
-          .ingredient.crossed {
-            text-decoration: line-through;
-          }
-        }
-      }
-      .ingredients,
-      .intructions {
-        width: 100%;
-        background: #fff;
-        padding: 20px;
+    .ingredients,
+    .intructions {
+      width: 100%;
+      background: #fff;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .intructions {
+      margin-top: 30px;
+      .step {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin: 20px 0;
+        padding: 15px;
         box-sizing: border-box;
-      }
-      .intructions {
-        margin-top: 30px;
-        .step {
-          // border: 1px solid #000;
-          display: flex;
-          align-items: flex-start;
-          justify-content: space-between;
-          margin: 20px 0;
-          padding: 15px;
-          box-sizing: border-box;
-          box-shadow: $boxShadow;
-          .number {
-            width: 10%;
-            color: #e8523d;
-            font-size: 20px;
-            font-weight: 600;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.24);
-
-            // border: 1px solid #000;
-          }
-          .intruction {
-            width: 85%;
-            // border: 1px solid #000;
-          }
+        box-shadow: $boxShadow;
+        .number {
+          width: 10%;
+          color: #e8523d;
+          font-size: 20px;
+          font-weight: 600;
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.24);
+        }
+        .intruction {
+          width: 85%;
         }
       }
     }

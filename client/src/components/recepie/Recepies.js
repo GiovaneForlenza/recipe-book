@@ -1,8 +1,8 @@
 import React from "react";
-import recepies from "../recepies";
-import RecepieCard from "./RecepieCard";
+import RecepieCard from "./recepieCard/RecepieCard";
 
-import "../style/recepie/recepies.scss";
+import "../../style/recepie/recepies.scss";
+import Header from "./recepieCard/Header";
 
 const Recepies = ({ recepies }) => {
   if (recepies.length < 1) {
@@ -12,7 +12,9 @@ const Recepies = ({ recepies }) => {
     <div className="recepies">
       {!recepies ? <h1>No recepies found</h1> : null}
       {recepies.map((recepie) => {
-        return <RecepieCard recepie={recepie} key={recepie.id} />;
+        return (
+          <Header recepie={recepie} key={recepie.id} caller={"Recepies"} />
+        );
       })}
     </div>
   );

@@ -1,30 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import recepies from "../recepies";
-import Image from "../components/Image";
-import SingleRecepieInfo from "../components/SingleRecepieInfo";
-import Ingredients from "../components/Ingredients";
-import Steps from "../components/Steps";
-import Spacer from "../components/Spacer";
-
-import {
-  AiOutlineHeart,
-  AiTwotoneHeart,
-  AiTwotoneStar,
-  AiOutlineClockCircle,
-  AiOutlineStar,
-} from "react-icons/ai";
-import { BsStarHalf } from "react-icons/bs";
+// import Image from "../components/Image";
+// import SingleRecepieInfo from "../components/recepie/SingleRecepieInfo";
+// import Ingredients from "../components/Ingredients";
+// import Steps from "../components/Steps";
+// import Spacer from "../components/Spacer";
 
 import "../style/global.scss";
 import "../style/recepie/recepie-page.scss";
 import "../style/recepie/recepie-img.scss";
+import "../style/recepie/recepie-header.scss";
+import Header from "../components/recepie/recepieCard/Header";
 
 const SingleRecepie = () => {
   const { id } = useParams();
   const [singleRecepie, setRecepie] = useState({});
   const [foundRecepie, setFoundRecepie] = useState(false);
-  const [isRecepieFavorite, setIsRecepieFavorite] = useState(false);
   const [checkboxesSelected, setcheckboxesSelected] = useState([]);
 
   useEffect(() => {
@@ -37,10 +29,6 @@ const SingleRecepie = () => {
   }, [id]);
 
   if (!foundRecepie) return <h2>No recepie found</h2>;
-
-  function handleClick() {
-    setIsRecepieFavorite(!isRecepieFavorite);
-  }
 
   function handleCheckboxClick(id) {
     const isSelected = checkboxesSelected.includes(id);
@@ -59,7 +47,7 @@ const SingleRecepie = () => {
   return (
     <main>
       <section className="section">
-        {/* <div className="page-header">
+        <div className="page-header">
           <div className="page-title">
             <h2>Recepie</h2>
             <div className="underline"></div>
@@ -67,59 +55,10 @@ const SingleRecepie = () => {
           <Link to={`/`} className="link-btn">
             Back Home
           </Link>
-        </div> */}
+        </div>
 
         <div className="single-recepie">
-          <div className="header">
-            <div className="img">
-              <img src={singleRecepie.img} alt="" />
-            </div>
-            <div className="header-info">
-              <div className="title">
-                <h1>{singleRecepie.title}</h1>
-              </div>
-              <div className="details">
-                <div className="left">
-                  <div className="line">
-                    Level:{" "}
-                    <span>
-                      <AiTwotoneStar />
-                      <AiTwotoneStar />
-                      <AiTwotoneStar />
-                      <BsStarHalf />
-                    </span>
-                  </div>
-                  <div className="line">
-                    Yield: <span>{singleRecepie.servings} servings</span>
-                  </div>
-                </div>
-                <div className="right">
-                  <div className="line">
-                    {/* <AiOutlineClockCircle /> */}
-                    Total: <span>{singleRecepie.totalTime} min</span>
-                  </div>
-                  <div className="line">
-                    {/* <AiOutlineClockCircle /> */}
-                    Cook: <span>{singleRecepie.cookTime} min</span>
-                  </div>
-                  <div className="line">
-                    {/* <AiOutlineClockCircle /> */}
-                    Prep: <span>{singleRecepie.prepTime} min</span>
-                  </div>
-                </div>
-              </div>
-              <div className="actions">
-                <div className="save-recepie" onClick={handleClick}>
-                  {isRecepieFavorite ? (
-                    <AiTwotoneHeart className="heart-icon filled icon" />
-                  ) : (
-                    <AiOutlineHeart className="heart-icon icon" />
-                  )}
-                  <div className="text">Favorite Recepie</div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <Header recepie={singleRecepie} />
           <div className="content">
             <div className="ingredients">
               <div className="title">

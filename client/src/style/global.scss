@@ -48,17 +48,3 @@ code {
   margin-bottom: 50px;
   padding-top: 10px;
 }
-
-.link-btn {
-  padding: 10px 20px;
-  background: $clrGold;
-  color: #000;
-  border: none;
-  font-size: 20px;
-  border-radius: 10px;
-  text-decoration: none;
-  transition: 0.5s;
-  &:hover {
-    color: #fff;
-  }
-}
