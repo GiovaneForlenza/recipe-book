@@ -7,24 +7,33 @@
   // margin-bottom: 50px;
 }
 
-@media screen and (max-width: 500px) {
-  .section.padding {
-    // max-width: 320px;
-    // padding: 10px;
-    // box-sizing: border-box;
+.menu {
+  .page-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+    z-index: 10;
+    .page-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      margin-bottom: 20px;
+      .filter {
+        position: absolute;
+        left: 10px;
+        .icon {
+          width: 40px;
+          height: 40px;
+          width: 100%;
+        }
+      }
+    }
   }
-}
-
-.spacer {
-  height: 50px;
-}
-
-.page-title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin-bottom: 20px;
 }
 
 .underline {
@@ -32,17 +41,6 @@
   height: 4px;
   margin-top: 5px;
   background-color: $clrGold;
-}
-
-.btn-container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  margin: auto;
-  margin-bottom: 20px;
-  min-width: 310px;
-  width: 50%;
 }
 
 .filter-btn {

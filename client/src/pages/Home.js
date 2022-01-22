@@ -6,6 +6,9 @@ import Spacer from "../components/Spacer";
 
 import "../style/home.scss";
 
+import { GiHamburgerMenu } from "react-icons/gi";
+import { IoMdSwitch } from "react-icons/io";
+
 const allCategories = [
   "all",
   ...new Set(recepies.map((recepie) => recepie.category)),
@@ -27,6 +30,8 @@ function Home() {
   const [prevIndex, setPrevIndex] = useState(-1);
   const [prevSelectedCategory, setPrevSelectedCategory] = useState("");
   const [prevSelectedIngredient, setPrevSelectedIngredient] = useState("");
+
+  const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
 
   // Deals with the buttons to change the categories / ingredients shown
   // Category - Title of the category pressed
@@ -92,25 +97,44 @@ function Home() {
     setItemsInMenu(newRecepies);
   };
 
+  function handleHamburgerClick() {
+    setIsHamburgerOpen(!isHamburgerOpen);
+  }
+
   return (
     <main>
       <section className="menu section padding">
+        <Spacer />
         <div className="page-header">
           <div className="page-title">
-            <h2>Menu</h2>
-            <div className="underline"></div>
+            <div className="filter" onClick={handleHamburgerClick}>
+              <IoMdSwitch className="icon" />
+            </div>
+            <div className="div-menu">
+              <h2>Menu</h2>
+            </div>
           </div>
-          {/* <Categories
-            categories={categories}
-            ingredients={ingredients}
-            filterItems={filterItems}
-            categoryBtn={selectedCategoryBtn}
-            ingredientBtn={selectedIngredientBtn}
-          /> */}
+          {isHamburgerOpen ? (
+            <>
+              <input
+                type="text"
+                name=""
+                id=""
+                placeholder="Search..."
+                className="input-search"
+              />
+              <Categories
+                categories={categories}
+                ingredients={ingredients}
+                filterItems={filterItems}
+                categoryBtn={selectedCategoryBtn}
+                ingredientBtn={selectedIngredientBtn}
+              />
+            </>
+          ) : null}
         </div>
         <Recepies recepies={itemsInMenu} />
       </section>
-      {/* <Spacer /> */}
     </main>
   );
 }
