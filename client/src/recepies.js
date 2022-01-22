@@ -35,7 +35,7 @@ CHICKEN
     totalTime: "45",
     cookTime: "30",
     prepTime: "15",
-    spicy: 0,
+    spicy: 3,
   },
   // Chicken Teryaki
   {

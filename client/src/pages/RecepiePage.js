@@ -7,7 +7,14 @@ import Ingredients from "../components/Ingredients";
 import Steps from "../components/Steps";
 import Spacer from "../components/Spacer";
 
-import { AiOutlineHeart, AiTwotoneHeart } from "react-icons/ai";
+import {
+  AiOutlineHeart,
+  AiTwotoneHeart,
+  AiTwotoneStar,
+  AiOutlineClockCircle,
+  AiOutlineStar,
+} from "react-icons/ai";
+import { BsStarHalf } from "react-icons/bs";
 
 import "../style/global.scss";
 import "../style/recepie/recepie-page.scss";
@@ -74,7 +81,13 @@ const SingleRecepie = () => {
               <div className="details">
                 <div className="left">
                   <div className="line">
-                    Level: <span>{singleRecepie.dificulty}</span>
+                    Level:{" "}
+                    <span>
+                      <AiTwotoneStar />
+                      <AiTwotoneStar />
+                      <AiTwotoneStar />
+                      <BsStarHalf />
+                    </span>
                   </div>
                   <div className="line">
                     Yield: <span>{singleRecepie.servings} servings</span>
@@ -82,12 +95,15 @@ const SingleRecepie = () => {
                 </div>
                 <div className="right">
                   <div className="line">
+                    {/* <AiOutlineClockCircle /> */}
                     Total: <span>{singleRecepie.totalTime} min</span>
                   </div>
                   <div className="line">
+                    {/* <AiOutlineClockCircle /> */}
                     Cook: <span>{singleRecepie.cookTime} min</span>
                   </div>
                   <div className="line">
+                    {/* <AiOutlineClockCircle /> */}
                     Prep: <span>{singleRecepie.prepTime} min</span>
                   </div>
                 </div>
@@ -164,7 +180,7 @@ const SingleRecepie = () => {
           </div>
         </div> */}
       </section>
-      <Spacer />
+      {/* <Spacer /> */}
     </main>
   );
 };
