@@ -3,7 +3,6 @@
 .header {
   .img {
     z-index: 1;
-    max-height: 200px;
     background-size: cover;
     overflow: hidden;
     img {
@@ -11,11 +10,11 @@
     }
   }
   .header-info {
+    word-break: break-word;
     background: #fff;
     border-radius: $borderRadius;
     overflow: hidden;
     box-shadow: $boxShadow;
-    width: 90%;
     transform: translateY(-40px);
     margin: auto;
     display: flex;
@@ -92,18 +91,87 @@
   }
 }
 
-@media screen and (min-width: 700px) {
-  .header {
-    .img {
-      max-height: 400px;
+@media screen and (min-width: 500px) {
+  .recipes {
+    .header {
+      .img {
+        img {
+          max-height: 200px;
+        }
+      }
+      .header-info {
+        width: 90%;
+      }
     }
-    .header-info {
-      width: 60%;
-      .details {
-        .left,
-        .right {
-          align-items: center;
-          justify-content: center;
+  }
+}
+
+@media screen and (min-width: 700px) and (max-width: 999px) {
+  .recipes {
+    .header {
+      .img {
+        // max-height: 400px;
+        border: 1px solid #000;
+        height: 300px;
+        img {
+          height: 100%;
+        }
+      }
+      .header-info {
+        width: 60%;
+        .details {
+          .left,
+          .right {
+            align-items: center;
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .recipes {
+    .header {
+      .img {
+        // max-height: 300px;
+        border: 3px solid #f00;
+        img {
+          height: 300px;
+          // height: 100%;
+          // width: 100%;
+        }
+      }
+      .header-info {
+        // height: 260px;
+        .actions {
+          transition: all 0.5s;
+          .view-recipe {
+            &:hover {
+              background-color: #cf8d2a;
+            }
+          }
+        }
+      }
+    }
+  }
+  .single-recepie {
+    .header {
+      .img {
+        border: 3px solid #00f;
+        height: 500px;
+        img {
+        }
+      }
+      .header-info {
+        width: 50%;
+        .details {
+          .left,
+          .right {
+            align-items: center;
+            justify-content: center;
+          }
         }
       }
     }

@@ -45,7 +45,6 @@
     box-sizing: border-box;
   }
   .intructions {
-    margin-top: 30px;
     .step {
       display: flex;
       align-items: flex-start;
@@ -95,5 +94,40 @@
   li {
     font-size: 20px;
     margin: 20px;
+  }
+}
+
+.page-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 999px) {
+  .single-recepie {
+    .content {
+      .intructions {
+        margin-top: 30px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .single-recepie {
+    .content {
+      border: 1px solid #000;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-around;
+      .ingredients {
+        width: 30%;
+      }
+      .intructions {
+        width: 40%;
+        margin-top: 0;
+      }
+    }
   }
 }

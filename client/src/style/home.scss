@@ -80,3 +80,12 @@
   background: $clrGold;
   color: $clrWhite;
 }
+
+@media screen and (min-width: 1000px) {
+  .recipes {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 50px;
+  }
+}
