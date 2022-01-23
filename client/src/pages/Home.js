@@ -70,7 +70,6 @@ function Home() {
     let newRecepies = [];
 
     if (prevSelectedCategory && prevSelectedIngredient) {
-      alert("a");
     }
 
     // If the btn was an ingredient
@@ -101,21 +100,25 @@ function Home() {
     setIsHamburgerOpen(!isHamburgerOpen);
   }
 
+  function closeHamburgerMenu() {
+    handleHamburgerClick();
+  }
+
   return (
     <main>
       <section className="menu section padding">
         <Spacer />
         <div className="page-header">
-          <div className="page-title">
+          <div className="div-menu">
             <div className="filter" onClick={handleHamburgerClick}>
               <IoMdSwitch className="icon" />
             </div>
-            <div className="div-menu">
+            <div className="">
               <h2>Menu</h2>
             </div>
           </div>
           {isHamburgerOpen ? (
-            <>
+            <div className="div-filter">
               <input
                 type="text"
                 name=""
@@ -129,8 +132,9 @@ function Home() {
                 filterItems={filterItems}
                 categoryBtn={selectedCategoryBtn}
                 ingredientBtn={selectedIngredientBtn}
+                onClick={handleHamburgerClick}
               />
-            </>
+            </div>
           ) : null}
         </div>
         <Recipes recipes={itemsInMenu} />

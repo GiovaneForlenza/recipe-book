@@ -8,6 +8,7 @@ const Categories = ({
   filterItems,
   categoryBtn,
   ingredientBtn,
+  onClick,
 }) => {
   return (
     <div className="categories">
@@ -19,6 +20,7 @@ const Categories = ({
               key={index}
               onClick={() => {
                 filterItems(category, index);
+                onClick();
               }}
             >
               {category}
@@ -36,6 +38,7 @@ const Categories = ({
               key={index}
               onClick={() => {
                 filterItems(undefined, index, ingredient);
+                onClick();
               }}
             >
               {ingredient}
