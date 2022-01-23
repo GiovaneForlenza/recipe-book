@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Recepies from "../components/recepie/Recepies";
-import recepies from "../recepies";
+import Recipes from "../components/recipe/Recipes";
+import recipes from "../recepies";
 import Categories from "../components/Categories";
 import Spacer from "../components/Spacer";
 
@@ -11,12 +11,12 @@ import { IoMdSwitch } from "react-icons/io";
 
 const allCategories = [
   "all",
-  ...new Set(recepies.map((recepie) => recepie.category)),
+  ...new Set(recipes.map((recipes) => recipes.category)),
 ];
 
 function Home() {
   const [categories, setCategories] = useState(allCategories);
-  const [itemsInMenu, setItemsInMenu] = useState(recepies);
+  const [itemsInMenu, setItemsInMenu] = useState(recipes);
   const [selectedCategoryBtn, setSelectedCategoryBtn] = useState(0);
   const [selectedIngredientBtn, setSelectedIngredientBtn] = useState(null);
   const [ingredients, setIngredients] = useState([
@@ -56,7 +56,7 @@ function Home() {
 
     // Shows all the items
     if (category === "all") {
-      setItemsInMenu(recepies);
+      setItemsInMenu(recipes);
       setSelectedCategoryBtn(0);
       setSelectedIngredientBtn(null);
       setPrevIndex(-1);
@@ -76,7 +76,7 @@ function Home() {
     // If the btn was an ingredient
     if (typeof ingredient !== "undefined") {
       // Search for the ingredients in all the recepies
-      recepies.forEach((recepie) => {
+      recipes.forEach((recepie) => {
         // If the recepie has the ingredient pressed, add to the array
         recepie.ingredients.forEach((recIngredient) => {
           if (recIngredient.includes(ingredient)) {
@@ -88,7 +88,7 @@ function Home() {
       setSelectedCategoryBtn(null);
     } else {
       // Add all recepies with the same category to the array
-      newRecepies = recepies.filter((recepie) => recepie.category === category);
+      newRecepies = recipes.filter((recepie) => recepie.category === category);
       setSelectedCategoryBtn(index);
       setSelectedIngredientBtn(null);
     }
@@ -133,7 +133,7 @@ function Home() {
             </>
           ) : null}
         </div>
-        <Recepies recepies={itemsInMenu} />
+        <Recipes recipes={itemsInMenu} />
       </section>
     </main>
   );

@@ -9,10 +9,10 @@ import recepies from "../recepies";
 // import Spacer from "../components/Spacer";
 
 import "../style/global.scss";
-import "../style/recepie/recepie-page.scss";
-import "../style/recepie/recepie-img.scss";
-import "../style/recepie/recepie-header.scss";
-import Header from "../components/recepie/Header";
+import "../style/recipe/recipe-page.scss";
+import "../style/recipe/recipe-img.scss";
+import "../style/recipe/recipe-header.scss";
+import Header from "../components/recipe/Header";
 import Navigation from "../components/Navigation";
 
 const SingleRecepie = () => {
@@ -22,9 +22,9 @@ const SingleRecepie = () => {
   const [checkboxesSelected, setcheckboxesSelected] = useState([]);
 
   useEffect(() => {
-    recepies.map((recepie) => {
-      if (recepie.id === id) {
-        setRecepie(recepie);
+    recepies.map((recipe) => {
+      if (recipe.id === id) {
+        setRecepie(recipe);
         setFoundRecepie(true);
       }
     });

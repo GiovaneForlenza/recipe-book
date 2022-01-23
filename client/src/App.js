@@ -2,8 +2,8 @@ import "./App.css";
 import "./style/global.scss";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
-import RecepiePage from "./pages/RecepiePage";
-import CreateRecepie from "./pages/CreateRecepie";
+import RecipePage from "./pages/RecipePage";
+import CreateRecipe from "./pages/CreateRecipe";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
@@ -14,10 +14,10 @@ function App() {
           <Home />
         </Route>
         <Route path="/recepie/:id">
-          <RecepiePage />
+          <RecipePage />
         </Route>
         <Route path="/create/">
-          <CreateRecepie />
+          <CreateRecipe />
         </Route>
       </Switch>
     </Router>

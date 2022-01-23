@@ -2,6 +2,9 @@
 .header {
   .img {
     z-index: 1;
+    max-height: 200px;
+    background-size: cover;
+    overflow: hidden;
     img {
       width: 100%;
     }

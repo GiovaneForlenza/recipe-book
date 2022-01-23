@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 import { AiOutlineHeart, AiFillHeart, AiTwotoneStar } from "react-icons/ai";
 import { BsStarHalf } from "react-icons/bs";
 
-import "../../style/recepie/recepie-header.scss";
+import "../../style/recipe/recipe-header.scss";
 
-function Header({ recepie, caller }) {
+function Header({ recipe, caller }) {
   const [isRecepieFavorite, setIsRecepieFavorite] = useState(false);
   function handleClick() {
     setIsRecepieFavorite(!isRecepieFavorite);
@@ -14,11 +14,11 @@ function Header({ recepie, caller }) {
   return (
     <div className="header">
       <div className="img">
-        <img src={recepie.img} alt="" />
+        <img src={recipe.img} alt="" />
       </div>
       <div className="header-info">
         <div className="title">
-          <h1>{recepie.title}</h1>
+          <h1>{recipe.title}</h1>
         </div>
         <div className="details">
           <div className="left">
@@ -32,36 +32,36 @@ function Header({ recepie, caller }) {
               </span>
             </div>
             <div className="line">
-              Yield: <span>{recepie.servings} servings</span>
+              Yield: <span>{recipe.servings} servings</span>
             </div>
           </div>
           <div className="right">
             <div className="line">
-              Total: <span>{recepie.totalTime} min</span>
+              Total: <span>{recipe.totalTime} min</span>
             </div>
             <div className="line">
-              Cook: <span>{recepie.cookTime} min</span>
+              Cook: <span>{recipe.cookTime} min</span>
             </div>
             <div className="line">
-              Prep: <span>{recepie.prepTime} min</span>
+              Prep: <span>{recipe.prepTime} min</span>
             </div>
           </div>
         </div>
         <div className="actions">
           {caller === "Recepies" ? (
-            <div className="view-recepie">
-              <Link to={`/recepie/${recepie.id}`} className="link-btn">
-                View full recepie
+            <div className="view-recipe">
+              <Link to={`/recipe/${recipe.id}`} className="link-btn">
+                View full recipe
               </Link>
             </div>
           ) : (
-            <div className="save-recepie" onClick={handleClick}>
+            <div className="save-recipe" onClick={handleClick}>
               {isRecepieFavorite ? (
                 <AiFillHeart className="heart-icon icon" />
               ) : (
                 <AiOutlineHeart className="heart-icon icon" />
               )}
-              <div className="text">Favorite Recepie</div>
+              <div className="text">Favorite recipe</div>
             </div>
           )}
         </div>
