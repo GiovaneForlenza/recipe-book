@@ -24,13 +24,17 @@
     background: $clrAccentBlue;
   }
 }
-
-.page-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin-bottom: 30px;
+.recipe-page {
+  .page-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+  .underline {
+    margin-bottom: 20px;
+  }
 }
 @media screen and (max-width: 500px) {
   .content {

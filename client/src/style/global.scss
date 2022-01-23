@@ -27,13 +27,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 #root {
-  // min-width: 320px;
   background: #f1f5f8;
-  // padding-top: 50px;
   min-height: 100vh;
-  main {
-    // width: 96%;
-  }
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -41,5 +36,5 @@ code {
 }
 
 .spacer {
-  height: 80px;
+  height: 60px;
 }

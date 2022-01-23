@@ -17,15 +17,19 @@
     padding: 10px;
     box-sizing: border-box;
     z-index: 10;
+    box-shadow: $boxShadow;
     .page-title {
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: row;
-      margin-bottom: 20px;
+      // margin-bottom: 20px;
       .filter {
         position: absolute;
         left: 10px;
+        input {
+          border: 2px solid #000;
+        }
         .icon {
           width: 40px;
           height: 40px;

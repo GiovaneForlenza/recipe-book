@@ -56,7 +56,7 @@
     }
     .actions {
       width: 90%;
-      .view-recepie {
+      .view-recipe {
         background: $clrGold;
         &:hover {
           color: #fff;
@@ -67,9 +67,8 @@
           transition: 0.5s;
         }
       }
-      .view-recepie,
-      .save-recepie {
-        font-weight: 600;
+      .view-recipe,
+      .save-recipe {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -84,7 +83,7 @@
           height: 30px;
         }
       }
-      .save-recepie {
+      .save-recipe {
         background: #e00e32;
         color: #fff;
       }

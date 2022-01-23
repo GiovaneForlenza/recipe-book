@@ -2,42 +2,42 @@ import React from "react";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import { FaPepperHot } from "react-icons/fa";
 
-const SingleRecepieInfo = ({ recepie }) => {
+const SingleRecipeInfo = ({ recipe: recipe }) => {
   const [isSpicy, setIsSpicy] = React.useState(false);
   let spicyLevel = [];
   React.useEffect(() => {
-    if (recepie.spicy !== 0) {
+    if (recipe.spicy !== 0) {
       setIsSpicy(true);
       defSpicyLevel();
     }
-  }, [recepie.id]);
+  }, [recipe.id]);
 
   const defSpicyLevel = () => {
-    for (let i = 0; i < recepie.spicy; i++) {
+    for (let i = 0; i < recipe.spicy; i++) {
       spicyLevel.push(i);
     }
   };
   return (
     <>
-      <div className="recepie-name">
-        <span>{recepie.title}</span>
+      <div className="recipe-name">
+        <span>{recipe.title}</span>
       </div>
-      <div className="recepie-information">
+      <div className="recipe-information">
         <h3>
-          <AiOutlineClockCircle /> Prep: {recepie.prepTime}
+          <AiOutlineClockCircle /> Prep: {recipe.prepTime}
         </h3>
         <h3>
-          <AiOutlineClockCircle /> Cook: {recepie.cookTime}
+          <AiOutlineClockCircle /> Cook: {recipe.cookTime}
         </h3>
         {isSpicy ? (
           <h3>
-            <FaPepperHot /> {recepie.spicy}
+            <FaPepperHot /> {recipe.spicy}
           </h3>
         ) : null}
-        <h3>Servings: {recepie.servings}</h3>
+        <h3>Servings: {recipe.servings}</h3>
       </div>
     </>
   );
 };
 
-export default SingleRecepieInfo;
+export default SingleRecipeInfo;

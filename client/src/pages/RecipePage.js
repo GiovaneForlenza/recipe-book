@@ -15,9 +15,9 @@ import "../style/recipe/recipe-header.scss";
 import Header from "../components/recipe/Header";
 import Navigation from "../components/Navigation";
 
-const SingleRecepie = () => {
+const SingleRecipe = () => {
   const { id } = useParams();
-  const [singleRecepie, setRecepie] = useState({});
+  const [singleRecipe, setRecepie] = useState({});
   const [foundRecepie, setFoundRecepie] = useState(false);
   const [checkboxesSelected, setcheckboxesSelected] = useState([]);
 
@@ -48,7 +48,7 @@ const SingleRecepie = () => {
 
   return (
     <main>
-      <section className="section">
+      <section className="section recipe-page">
         <div className="page-header">
           <div className="page-title">
             <h2>Recepie</h2>
@@ -58,13 +58,13 @@ const SingleRecepie = () => {
         </div>
 
         <div className="single-recepie">
-          <Header recepie={singleRecepie} />
+          <Header recipe={singleRecipe} />
           <div className="content">
             <div className="ingredients">
               <div className="title">
                 <h1>Ingredients</h1>
               </div>
-              {singleRecepie.ingredients.map((ingredient, id) => {
+              {singleRecipe.ingredients.map((ingredient, id) => {
                 return (
                   <div className="line">
                     <input
@@ -90,7 +90,7 @@ const SingleRecepie = () => {
               <div className="title">
                 <h1>Intructions</h1>
               </div>
-              {singleRecepie.steps.map((step, id) => {
+              {singleRecipe.steps.map((step, id) => {
                 return (
                   <div className="step">
                     <div className="number">{id + 1}</div>
@@ -107,15 +107,15 @@ const SingleRecepie = () => {
         {/* <div className="recepie">
           <div className="recepie-header">
             <div className="header-container">
-              <Image img={singleRecepie.img} />
+              <Image img={singleRecipe.img} />
               <div className="single-recepie-info">
-                <SingleRecepieInfo recepie={singleRecepie} />
+                <SingleRecepieInfo recepie={singleRecipe} />
               </div>
             </div>
           </div>
-          <Ingredients recepie={singleRecepie} />
+          <Ingredients recepie={singleRecipe} />
           <div className="instructions">
-          <Steps recepie={singleRecepie} />
+          <Steps recepie={singleRecipe} />
           </div>
         </div> */}
       </section>
@@ -124,4 +124,4 @@ const SingleRecepie = () => {
   );
 };
 
-export default SingleRecepie;
+export default SingleRecipe;
