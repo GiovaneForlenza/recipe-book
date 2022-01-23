@@ -7,7 +7,9 @@ import Spacer from "../components/Spacer";
 import "../style/home.scss";
 
 import { GiHamburgerMenu } from "react-icons/gi";
-import { IoMdSwitch } from "react-icons/io";
+import { IoIosSwitch, IoMdClose } from "react-icons/io";
+import { BsFilterLeft } from "react-icons/bs";
+import { MdClose } from "react-icons/md";
 
 const allCategories = [
   "all",
@@ -100,10 +102,6 @@ function Home() {
     setIsHamburgerOpen(!isHamburgerOpen);
   }
 
-  function closeHamburgerMenu() {
-    handleHamburgerClick();
-  }
-
   return (
     <main>
       <section className="menu section padding">
@@ -111,13 +109,17 @@ function Home() {
         <div className="page-header">
           <div className="div-menu">
             <div className="filter" onClick={handleHamburgerClick}>
-              <IoMdSwitch className="icon" />
+              {isHamburgerOpen ? (
+                <IoMdClose className="icon" />
+              ) : (
+                <BsFilterLeft className="icon" />
+              )}
             </div>
             <div className="">
-              <h2>Menu</h2>
+              {!isHamburgerOpen ? <h2>Menu</h2> : <h2>Filters</h2>}
             </div>
           </div>
-          {isHamburgerOpen ? (
+          {isHamburgerOpen && (
             <div className="div-filter">
               <input
                 type="text"
@@ -134,8 +136,9 @@ function Home() {
                 ingredientBtn={selectedIngredientBtn}
                 onClick={handleHamburgerClick}
               />
+              <div className="favorites-btn">Favorites</div>
             </div>
-          ) : null}
+          )}
         </div>
         <Recipes recipes={itemsInMenu} />
       </section>

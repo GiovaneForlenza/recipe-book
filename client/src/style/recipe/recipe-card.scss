@@ -11,21 +11,19 @@
   box-sizing: border-box;
 }
 
-@media screen and (max-width: 1200px) {
-  .recepie-card {
-    grid-template-columns: 1fr;
-  }
+.recepie-card {
+  grid-template-columns: 1fr;
+}
 
-  .recepie-card .recepie-img,
-  .single-recepie .recepie-img {
-    height: 300px;
-  }
+.recepie-card .recepie-img,
+.single-recepie .recepie-img {
+  height: 300px;
+}
 
-  .recepie-info {
-    .recepie-name {
-      span {
-        font-size: 20px;
-      }
+.recepie-info {
+  .recepie-name {
+    span {
+      font-size: 20px;
     }
   }
 }

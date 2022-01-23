@@ -1,4 +1,5 @@
 @import "../global";
+
 .header {
   .img {
     z-index: 1;
@@ -86,6 +87,24 @@
       .save-recipe {
         background: #e00e32;
         color: #fff;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .header {
+    .img {
+      max-height: 400px;
+    }
+    .header-info {
+      width: 60%;
+      .details {
+        .left,
+        .right {
+          align-items: center;
+          justify-content: center;
+        }
       }
     }
   }
