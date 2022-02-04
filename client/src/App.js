@@ -5,13 +5,17 @@ import Home from "./pages/Home";
 import RecipePage from "./pages/RecipePage";
 import CreateRecipe from "./pages/CreateRecipe";
 
+import { FiltersContextProvider } from "./contexts/FiltersContext";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   return (
     <Router>
       <Switch>
         <Route exact path="/">
-          <Home />
+          <FiltersContextProvider>
+            <Home />
+          </FiltersContextProvider>
         </Route>
         <Route path="/recipe/:id">
           <RecipePage />

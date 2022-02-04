@@ -10,6 +10,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { IoIosSwitch, IoMdClose } from "react-icons/io";
 import { BsFilterLeft } from "react-icons/bs";
 import { MdClose } from "react-icons/md";
+import Filters from "../components/filters/Filters";
 
 const allCategories = [
   "all",
@@ -35,68 +36,67 @@ function Home() {
 
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
 
-  // Deals with the buttons to change the categories / ingredients shown
-  // Category - Title of the category pressed
-  // Index - Index of the btn pressed
-  // Ingredient - Title of the ingredient pressed. Undefined by default
-  const filterItems = (category, index, ingredient) => {
-    category === "all" ? setIsAllSelected(true) : setIsAllSelected(false);
-    // Checks if the btn selected is not 'All', and if the current press is the same as the previous
-    // Works for both the categories and ingredients btn
-    // If true, change the category to All, triggering all the items to be shown
+  // // Deals with the buttons to change the categories / ingredients shown
+  // // Category - Title of the category pressed
+  // // Index - Index of the btn pressed
+  // // Ingredient - Title of the ingredient pressed. Undefined by default
+  // const filterItems = (category, index, ingredient) => {
+  //   category === "all" ? setIsAllSelected(true) : setIsAllSelected(false);
+  //   // Checks if the btn selected is not 'All', and if the current press is the same as the previous
+  //   // Works for both the categories and ingredients btn
+  //   // If true, change the category to All, triggering all the items to be shown
 
-    if (
-      (!isAllSelected && allCategories.indexOf(category) === prevIndex) ||
-      (!isAllSelected && ingredients.indexOf(ingredient) === prevIndex)
-    ) {
-      category = "all";
-    }
+  //   if (
+  //     (!isAllSelected && allCategories.indexOf(category) === prevIndex) ||
+  //     (!isAllSelected && ingredients.indexOf(ingredient) === prevIndex)
+  //   ) {
+  //     category = "all";
+  //   }
 
-    typeof ingredient !== "undefined"
-      ? setPrevSelectedIngredient(index)
-      : setPrevSelectedCategory(index);
+  //   typeof ingredient !== "undefined"
+  //     ? setPrevSelectedIngredient(index)
+  //     : setPrevSelectedCategory(index);
 
-    // Shows all the items
-    if (category === "all") {
-      setItemsInMenu(recipes);
-      setSelectedCategoryBtn(0);
-      setSelectedIngredientBtn(null);
-      setPrevIndex(-1);
-      setIsAllSelected(true);
-      setPrevSelectedIngredient("");
-      setPrevSelectedCategory("");
-      return;
-    }
+  //   // Shows all the items
+  //   if (category === "all") {
+  //     setItemsInMenu(recipes);
+  //     setSelectedCategoryBtn(0);
+  //     setSelectedIngredientBtn(null);
+  //     setPrevIndex(-1);
+  //     setIsAllSelected(true);
+  //     setPrevSelectedIngredient("");
+  //     setPrevSelectedCategory("");
+  //     return;
+  //   }
 
-    // If any other btn was pressed
-    let newRecepies = [];
+  //   // If any other btn was pressed
+  //   let newRecepies = [];
 
-    if (prevSelectedCategory && prevSelectedIngredient) {
-    }
+  //   if (prevSelectedCategory && prevSelectedIngredient) {
+  //   }
 
-    // If the btn was an ingredient
-    if (typeof ingredient !== "undefined") {
-      // Search for the ingredients in all the recepies
-      recipes.forEach((recepie) => {
-        // If the recepie has the ingredient pressed, add to the array
-        recepie.ingredients.forEach((recIngredient) => {
-          if (recIngredient.includes(ingredient)) {
-            newRecepies.push(recepie);
-          }
-        });
-      });
-      setSelectedIngredientBtn(index);
-      setSelectedCategoryBtn(null);
-    } else {
-      // Add all recepies with the same category to the array
-      newRecepies = recipes.filter((recepie) => recepie.category === category);
-      setSelectedCategoryBtn(index);
-      setSelectedIngredientBtn(null);
-    }
-    // }
-    setPrevIndex(index);
-    setItemsInMenu(newRecepies);
-  };
+  //   // If the btn was an ingredient
+  //   if (typeof ingredient !== "undefined") {
+  //     // Search for the ingredients in all the recepies
+  //     recipes.forEach((recepie) => {
+  //       // If the recepie has the ingredient pressed, add to the array
+  //       recepie.ingredients.forEach((recIngredient) => {
+  //         if (recIngredient.includes(ingredient)) {
+  //           newRecepies.push(recepie);
+  //         }
+  //       });
+  //     });
+  //     setSelectedIngredientBtn(index);
+  //     setSelectedCategoryBtn(null);
+  //   } else {
+  //     // Add all recepies with the same category to the array
+  //     newRecepies = recipes.filter((recepie) => recepie.category === category);
+  //     setSelectedCategoryBtn(index);
+  //     setSelectedIngredientBtn(null);
+  //   }
+  //   setPrevIndex(index);
+  //   setItemsInMenu(newRecepies);
+  // };
 
   function handleHamburgerClick() {
     setIsHamburgerOpen(!isHamburgerOpen);
@@ -121,22 +121,34 @@ function Home() {
           </div>
           {isHamburgerOpen && (
             <div className="div-filter">
-              <input
+              {/* <input
                 type="text"
                 name=""
                 id=""
                 placeholder="Search..."
                 className="input-search"
-              />
-              <Categories
+              /> */}
+              {/* <Categories
                 categories={categories}
                 ingredients={ingredients}
                 filterItems={filterItems}
                 categoryBtn={selectedCategoryBtn}
                 ingredientBtn={selectedIngredientBtn}
                 onClick={handleHamburgerClick}
+              /> */}
+              {/* <div className="favorites-btn">Favorites</div> */}
+
+              <Filters
+                prevIndex={prevIndex}
+                setPrevIndex={setPrevIndex}
+                setItemsInMenu={setItemsInMenu}
+                setSelectedCategoryBtn={setSelectedCategoryBtn}
+                setSelectedIngredientBtn={setSelectedIngredientBtn}
+                prevSelectedCategory={prevSelectedCategory}
+                prevSelectedIngredient={prevSelectedIngredient}
+                setPrevSelectedCategory={setPrevSelectedCategory}
+                setPrevSelectedIngredient={setPrevSelectedIngredient}
               />
-              <div className="favorites-btn">Favorites</div>
             </div>
           )}
         </div>

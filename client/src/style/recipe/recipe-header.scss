@@ -37,13 +37,12 @@
       .left,
       .right {
         display: flex;
-        align-items: flex-start;
-        justify-content: space-around;
+        align-items: center;
+        justify-content: center;
         flex-direction: column;
         width: 50%;
         padding: 10px;
         box-sizing: border-box;
-        height: 90px;
       }
     }
     .actions {
@@ -108,20 +107,12 @@
     .header {
       .img {
         height: 300px;
-        // width: 70%;
         margin: auto;
         background-size: cover;
         background-position: top center;
       }
       .header-info {
         width: 90%;
-        .details {
-          .left,
-          .right {
-            align-items: center;
-            justify-content: center;
-          }
-        }
       }
     }
   }
@@ -138,13 +129,6 @@
       }
       .header-info {
         width: 60%;
-        .details {
-          .left,
-          .right {
-            align-items: center;
-            justify-content: center;
-          }
-        }
       }
     }
   }
@@ -174,7 +158,7 @@
   .recipes {
     .header {
       .img {
-        height: 300px;
+        height: 400px;
         background-size: cover;
         background-position: center center;
       }
@@ -193,7 +177,6 @@
   .single-recepie {
     .header {
       .img {
-        border: 3px solid #00f;
         height: 500px;
         width: 70%;
         margin: auto;
@@ -201,18 +184,10 @@
         background-position: top center;
         img {
           height: 100%;
-          // width: 100%;
         }
       }
       .header-info {
         width: 40%;
-        .details {
-          .left,
-          .right {
-            align-items: center;
-            justify-content: center;
-          }
-        }
       }
     }
   }

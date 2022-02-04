@@ -83,11 +83,10 @@
 
 @media screen and (min-width: 1000px) {
   .recipes {
-    border: 1px solid #000;
     padding: 20px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 100px;
-    grid-row-gap: 50px;
+    grid-column-gap: 3em;
+    grid-row-gap: 3em;
   }
 }

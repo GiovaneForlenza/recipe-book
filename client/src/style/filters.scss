@@ -1,0 +1,33 @@
+@import "./global.scss";
+
+.filters-container {
+  .filters-group {
+    margin: 10px;
+    .title {
+      color: red;
+    }
+    .filter {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      input {
+        width: 20px;
+        height: 20px;
+      }
+      label {
+        margin-left: 10px;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .filters-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row;
+    gap: 50px;
+  }
+}
