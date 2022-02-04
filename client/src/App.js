@@ -8,14 +8,20 @@ import CreateRecipe from "./pages/CreateRecipe";
 import { FiltersContextProvider } from "./contexts/FiltersContext";
 
 import "bootstrap/dist/css/bootstrap.min.css";
+import { RecipesInMenuContextProvider } from "./contexts/RecipesInMenuContext";
+import { RecipeInfoContextProvider } from "./contexts/RecipeInfoContext";
 function App() {
   return (
     <Router>
       <Switch>
         <Route exact path="/">
-          <FiltersContextProvider>
-            <Home />
-          </FiltersContextProvider>
+          <RecipeInfoContextProvider>
+            <RecipesInMenuContextProvider>
+              <FiltersContextProvider>
+                <Home />
+              </FiltersContextProvider>
+            </RecipesInMenuContextProvider>
+          </RecipeInfoContextProvider>
         </Route>
         <Route path="/recipe/:id">
           <RecipePage />

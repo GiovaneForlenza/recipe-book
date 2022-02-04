@@ -48,7 +48,6 @@ function Header({ recipe, caller }) {
           </div>
         </div>
         <div className="actions">
-          {console.log(caller)}
           {caller === "recipes" ? (
             <div className="view-recipe">
               <Link to={`/recipe/${recipe.id}`} className="link-btn">

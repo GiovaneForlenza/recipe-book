@@ -1,78 +1,25 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 
 import { FiltersContext } from "../../contexts/FiltersContext";
+import { RecipeInfoContext } from "../../contexts/RecipeInfoContext";
+import { RecipesInMenuContext } from "../../contexts/RecipesInMenuContext";
 
 import "../../style/filters.scss";
 
-const Filters = ({
-  prevIndex,
-  setPrevIndex,
-  setItemsInMenu,
-  setSelectedCategoryBtn,
-  setSelectedIngredientBtn,
-  prevSelectedCategory,
-  prevSelectedIngredient,
-  setPrevSelectedCategory,
-  setPrevSelectedIngredient,
-}) => {
-  const { categories, ingredients, handleClick } = useContext(FiltersContext);
-  // const allCategories = [
-  //   "all",
-  //   ...new Set(recipes.map((recipes) => recipes.category)),
-  // ];
-  // const [categories, setCategories] = useState(allCategories);
+const Filters = () => {
+  const {
+    categoryCheckboxesSelected,
+    ingredientCheckboxesSelected,
+    handleClick,
+    resetFilters,
+  } = useContext(FiltersContext);
 
-  // const [ingredients, setIngredients] = useState([
-  //   "chicken",
-  //   "beef",
-  //   "pork",
-  //   "pasta",
-  //   "potato",
-  // ]);
+  const { categories, ingredients } = useContext(RecipeInfoContext);
 
-  // const [isAllSelected, setIsAllSelected] = useState(true);
-
-  // const [categoryCheckboxesSelected, setCategoryCheckboxesSelected] = useState(
-  //   []
-  // );
-  // const [ingredientCheckboxesSelected, setingredientCheckboxesSelected] =
-  //   useState([]);
-
-  // function handleClick(id, caller, category, index, ingredient) {
-  //   let isSelected;
-  //   if (caller === "category") {
-  //     isSelected = categoryCheckboxesSelected.includes(id);
-  //   } else {
-  //     isSelected = ingredientCheckboxesSelected.includes(id);
-  //   }
-
-  //   if (!isSelected) {
-  //     if (caller === "category") {
-  //       setCategoryCheckboxesSelected([...categoryCheckboxesSelected, id]);
-  //     } else {
-  //       setingredientCheckboxesSelected([...ingredientCheckboxesSelected, id]);
-  //     }
-  //   } else {
-  //     let checkedBoxes;
-  //     if (caller === "category") {
-  //       checkedBoxes = categoryCheckboxesSelected.filter(
-  //         (checkBox) => checkBox !== id
-  //       );
-  //       setCategoryCheckboxesSelected(checkedBoxes);
-  //     } else {
-  //       checkedBoxes = ingredientCheckboxesSelected.filter(
-  //         (checkBox) => checkBox !== id
-  //       );
-  //       setingredientCheckboxesSelected(checkedBoxes);
-  //     }
-  //   }
-  //   document.getElementById(
-  //     `${caller === "category" ? "category-" : "ingredient-"}${id}`
-  //   ).checked = !isSelected;
-  // }
+  const { filterRecipes } = useContext(RecipesInMenuContext);
 
   return (
-    <div class="filters-container">
+    <div class="filters-container div-invisible" id="filters_container">
       <div className="filters-group">
         <h3 className="title">Categories</h3>
         {categories.map((category, id) => {
@@ -113,6 +60,12 @@ const Filters = ({
           );
         })}
       </div>
+      {categoryCheckboxesSelected.length !== 0 ||
+      ingredientCheckboxesSelected.length !== 0 ? (
+        <div className="btn-reset" onClick={resetFilters}>
+          Reset
+        </div>
+      ) : null}
     </div>
   );
 };

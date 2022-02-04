@@ -1,31 +1,27 @@
 import React, { useState, createContext } from "react";
 
-import recipes from "../recepies";
 export const FiltersContext = createContext();
-
 export const FiltersContextProvider = (props) => {
-  const allCategories = [
-    "all",
-    ...new Set(recipes.map((recipes) => recipes.category)),
-  ];
-  const [categories, setCategories] = useState(allCategories);
-  const [ingredients, setIngredients] = useState([
-    "chicken",
-    "beef",
-    "pork",
-    "pasta",
-    "potato",
-  ]);
-
-  const [isAllSelected, setIsAllSelected] = useState(true);
-
   const [categoryCheckboxesSelected, setCategoryCheckboxesSelected] = useState(
     []
   );
   const [ingredientCheckboxesSelected, setingredientCheckboxesSelected] =
     useState([]);
 
-  function handleClick(id, caller, category, index, ingredient) {
+  let checkedBoxes;
+
+  function resetFilters() {
+    categoryCheckboxesSelected.map((category) => {
+      removeCheckedCategory(checkedBoxes, category);
+      updateBoxSelected("category", category, false);
+    });
+    ingredientCheckboxesSelected.map((ingredient) => {
+      removeCheckedIngredients(checkedBoxes, ingredient);
+      updateBoxSelected("ingredient", ingredient, false);
+    });
+  }
+
+  function handleClick(id, caller) {
     let isSelected;
     if (caller === "category") {
       isSelected = categoryCheckboxesSelected.includes(id);
@@ -40,38 +36,42 @@ export const FiltersContextProvider = (props) => {
         setingredientCheckboxesSelected([...ingredientCheckboxesSelected, id]);
       }
     } else {
-      let checkedBoxes;
       if (caller === "category") {
-        checkedBoxes = categoryCheckboxesSelected.filter(
-          (checkBox) => checkBox !== id
-        );
-        setCategoryCheckboxesSelected(checkedBoxes);
+        removeCheckedCategory(checkedBoxes, id);
       } else {
-        checkedBoxes = ingredientCheckboxesSelected.filter(
-          (checkBox) => checkBox !== id
-        );
-        setingredientCheckboxesSelected(checkedBoxes);
+        removeCheckedIngredients(checkedBoxes, id);
       }
     }
+    updateBoxSelected(caller, id, !isSelected);
+  }
+
+  function removeCheckedCategory(checkedBoxes, id) {
+    checkedBoxes = categoryCheckboxesSelected.filter(
+      (checkBox) => checkBox !== id
+    );
+    setCategoryCheckboxesSelected(checkedBoxes);
+  }
+  function removeCheckedIngredients(checkedBoxes, id) {
+    checkedBoxes = ingredientCheckboxesSelected.filter(
+      (checkBox) => checkBox !== id
+    );
+    setingredientCheckboxesSelected(checkedBoxes);
+  }
+
+  function updateBoxSelected(caller, id, state) {
     document.getElementById(
       `${caller === "category" ? "category-" : "ingredient-"}${id}`
-    ).checked = !isSelected;
+    ).checked = state;
   }
+
   return (
     <FiltersContext.Provider
-      values={{
-        allCategories,
-        categories,
-        setCategories,
-        ingredients,
-        setIngredients,
-        isAllSelected,
-        setIsAllSelected,
+      value={{
         categoryCheckboxesSelected,
-        setCategoryCheckboxesSelected,
         ingredientCheckboxesSelected,
-        setingredientCheckboxesSelected,
         handleClick,
+        updateBoxSelected,
+        resetFilters,
       }}
     >
       {props.children}
