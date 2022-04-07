@@ -4,7 +4,6 @@
   width: 100%;
   scroll-behavior: smooth;
   padding-top: 20px;
-  // margin-bottom: 50px;
 }
 
 .menu {
@@ -26,6 +25,9 @@
       .filter {
         position: absolute;
         left: 10px;
+        &:hover {
+          cursor: pointer;
+        }
         input {
           border: 2px solid #000;
         }
@@ -41,7 +43,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-direction: column;
+
       input {
         padding: 5px;
       }

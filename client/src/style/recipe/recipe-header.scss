@@ -96,7 +96,8 @@
           transition: all 0.5s;
           .view-recipe {
             &:hover {
-              background-color: #cf8d2a;
+              background-color: $clrDarkGold;
+              cursor: pointer;
             }
           }
         }
@@ -167,7 +168,8 @@
           transition: all 0.5s;
           .view-recipe {
             &:hover {
-              background-color: #cf8d2a;
+              background-color: $clrDarkGold;
+              cursor: pointer;
             }
           }
         }

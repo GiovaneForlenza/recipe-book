@@ -12,16 +12,16 @@ export const FiltersContextProvider = (props) => {
 
   function resetFilters() {
     categoryCheckboxesSelected.map((category) => {
-      removeCheckedCategory(checkedBoxes, category);
+      removeCheckedBox(checkedBoxes, category, "category");
       updateBoxSelected("category", category, false);
     });
     ingredientCheckboxesSelected.map((ingredient) => {
-      removeCheckedIngredients(checkedBoxes, ingredient);
+      removeCheckedBox(checkedBoxes, ingredient, "ingredient");
       updateBoxSelected("ingredient", ingredient, false);
     });
   }
 
-  function handleClick(id, caller) {
+  function handleClick(id, caller, category) {
     let isSelected;
     if (caller === "category") {
       isSelected = categoryCheckboxesSelected.includes(id);
@@ -36,26 +36,20 @@ export const FiltersContextProvider = (props) => {
         setingredientCheckboxesSelected([...ingredientCheckboxesSelected, id]);
       }
     } else {
-      if (caller === "category") {
-        removeCheckedCategory(checkedBoxes, id);
-      } else {
-        removeCheckedIngredients(checkedBoxes, id);
-      }
+      removeCheckedBox(checkedBoxes, id, caller);
     }
     updateBoxSelected(caller, id, !isSelected);
   }
 
-  function removeCheckedCategory(checkedBoxes, id) {
-    checkedBoxes = categoryCheckboxesSelected.filter(
-      (checkBox) => checkBox !== id
-    );
-    setCategoryCheckboxesSelected(checkedBoxes);
-  }
-  function removeCheckedIngredients(checkedBoxes, id) {
-    checkedBoxes = ingredientCheckboxesSelected.filter(
-      (checkBox) => checkBox !== id
-    );
-    setingredientCheckboxesSelected(checkedBoxes);
+  function removeCheckedBox(checkedBoxes, id, caller) {
+    checkedBoxes =
+      caller === "category"
+        ? categoryCheckboxesSelected
+        : ingredientCheckboxesSelected;
+    checkedBoxes = checkedBoxes.filter((checkBox) => checkBox !== id);
+    caller === "category"
+      ? setCategoryCheckboxesSelected(checkedBoxes)
+      : setingredientCheckboxesSelected(checkedBoxes);
   }
 
   function updateBoxSelected(caller, id, state) {

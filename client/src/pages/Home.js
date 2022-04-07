@@ -40,7 +40,7 @@ function Home() {
             </div>
           </div>
           <div className="div-filter">
-            <Filters />
+            <Filters handleHamburgerClick={handleHamburgerClick} />
           </div>
         </div>
         <Recipes recipes={allRecipes} />

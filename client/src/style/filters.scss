@@ -1,22 +1,55 @@
 @import "./global.scss";
 
 .filters-container {
-  .filters-group {
-    margin: 10px;
-    .title {
-      color: red;
+  // width: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  // border: 1px solid #000;
+  .line {
+    // border: 1px solid #000;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    width: 400px;
+    .filters-group {
+      margin: 10px;
+      .title {
+        color: red;
+      }
+      .filter {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        input {
+          width: 20px;
+          height: 20px;
+        }
+        label {
+          margin-left: 10px;
+          font-size: 20px;
+        }
+      }
     }
-    .filter {
+  }
+  .line.button {
+    height: 30px;
+    .btn-reset {
+      width: 150px;
       display: flex;
       align-items: center;
-      justify-content: flex-start;
-      input {
-        width: 20px;
-        height: 20px;
-      }
-      label {
-        margin-left: 10px;
-        font-size: 20px;
+      justify-content: center;
+      height: 35px;
+      border-radius: 5px;
+      background-color: $clrGold;
+      color: black;
+      transition: all 0.5s;
+      &:hover {
+        cursor: pointer;
+        background-color: $clrDarkGold;
       }
     }
   }
@@ -24,10 +57,10 @@
 
 @media screen and (min-width: 700px) {
   .filters-container {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-direction: row;
-    gap: 50px;
+    // display: flex;
+    // align-items: flex-start;
+    // justify-content: center;
+    // flex-direction: row;
+    // gap: 50px;
   }
 }
