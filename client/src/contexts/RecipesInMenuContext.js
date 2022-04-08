@@ -15,20 +15,23 @@ export const RecipesInMenuContextProvider = (props) => {
 
   const [recipesInMenu, setRecipesInMenu] = useState(recipes);
 
+  //#region THINGS I DONT NEED
   // const [isAllSelected, setIsAllSelected] = useState(true);
   // const [prevIndex, setPrevIndex] = useState(-1);
   // const [prevSelectedCategory, setPrevSelectedCategory] = useState("");
   // const [prevSelectedIngredient, setPrevSelectedIngredient] = useState("");
 
-  const [selectedCategory, setSelectedCategory] = useState("");
-  const [selectedIngredient, setSelectedIngredient] = useState("");
+  // const [selectedCategory, setSelectedCategory] = useState("");
+  // const [selectedIngredient, setSelectedIngredient] = useState("");
 
-  const [filteredRecipes, setFilteredRecipes] = useState([]);
-
-  const filterRecipes = (category, index, ingredient) => {
-    setSelectedCategory(category);
-    setSelectedIngredient(ingredient);
-  };
+  // const filterRecipes = (
+  //   // category, index, ingredient
+  //   selectedFilter
+  // ) => {
+  //   // setSelectedCategory(category);
+  //   // setSelectedIngredient(ingredient);
+  //   setLastSelectedFilter(selectedFilter);
+  // };
   //   category === "all" ? setIsAllSelected(true) : setIsAllSelected(false);
 
   //   if (
@@ -70,20 +73,17 @@ export const RecipesInMenuContextProvider = (props) => {
   //   setPrevIndex(index);
   //   setRecipesInMenu(newRecepies);
   // };
-
-  useEffect(() => {
-    // if (categoryCheckboxesSelected.length > 0) {
-    //   setFilteredRecipes([
-    //     ...filteredRecipes,
-    //     allRecipes.filter((recipe) => recipe.category === selectedCategory),
-    //   ]);
-    // }
-    // console.log(filteredRecipes);
-  }, [categoryCheckboxesSelected, ingredientCheckboxesSelected]);
+  //#endregion
 
   return (
     <RecipesInMenuContext.Provider
-      value={{ allRecipes, recipesInMenu, setRecipesInMenu, filterRecipes }}
+      value={{
+        allRecipes,
+        recipesInMenu,
+        setRecipesInMenu,
+        // filterRecipes,
+        // setLastSelectedFilter,
+      }}
     >
       {props.children}
     </RecipesInMenuContext.Provider>

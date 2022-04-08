@@ -12,6 +12,10 @@ const Filters = ({ handleHamburgerClick }) => {
     ingredientCheckboxesSelected,
     handleClick,
     resetFilters,
+    setLastSelectedFilter,
+    lastSelectedFilter,
+    filters,
+    updateBoxSelected,
   } = useContext(FiltersContext);
 
   const { categories, ingredients } = useContext(RecipeInfoContext);
@@ -30,16 +34,10 @@ const Filters = ({ handleHamburgerClick }) => {
                 className="filter"
                 key={id}
                 onClick={() => {
-                  handleClick(id, "category", category);
-                  filterRecipes(category, id);
-                  // handleHamburgerClick();
+                  setLastSelectedFilter(category);
                 }}
               >
-                <input
-                  type="checkbox"
-                  id={`category-${id}`}
-                  className="cx-box"
-                />
+                <div className="cx-box" id={`${category}-cxbox`}></div>
                 <label>{category}</label>
               </div>
             );
@@ -53,16 +51,12 @@ const Filters = ({ handleHamburgerClick }) => {
                 className="filter"
                 key={id}
                 onClick={() => {
-                  handleClick(id, "ingredient");
-                  filterRecipes(undefined, id, ingredient);
+                  setLastSelectedFilter(ingredient);
+
                   // handleHamburgerClick();
                 }}
               >
-                <input
-                  type="checkbox"
-                  id={`ingredient-${id}`}
-                  className="cx-box"
-                />
+                <div className="cx-box" id={`${ingredient}-cxbox`}></div>
                 <label>{ingredient}</label>
               </div>
             );
@@ -76,8 +70,8 @@ const Filters = ({ handleHamburgerClick }) => {
             className="btn-reset"
             onClick={() => {
               resetFilters();
-              filterRecipes("all");
-              handleHamburgerClick();
+
+              // handleHamburgerClick();
             }}
           >
             Reset

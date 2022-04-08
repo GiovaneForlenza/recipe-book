@@ -6,9 +6,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  // border: 1px solid #000;
   .line {
-    // border: 1px solid #000;
     display: flex;
     align-items: flex-start;
     justify-content: space-around;
@@ -23,14 +21,34 @@
         display: flex;
         align-items: center;
         justify-content: flex-start;
-
-        input {
-          width: 20px;
-          height: 20px;
+        margin: 5px 0;
+        cursor: pointer;
+        .cx-box {
+          display: inline-block;
+          width: 22px;
+          height: 22px;
+          border-radius: 2px;
+          border: 2px solid #000;
+          display: grid;
+          place-content: center;
+          &::before {
+            content: "";
+            width: 0.9em;
+            height: 0.9em;
+            transform: scale(0);
+            transition: 120ms transform ease-in-out;
+            box-shadow: inset 1em 1em #663399;
+          }
+        }
+        .cx-box.checked {
+          &::before {
+            transform: scale(1);
+          }
         }
         label {
           margin-left: 10px;
           font-size: 20px;
+          cursor: pointer;
         }
       }
     }
