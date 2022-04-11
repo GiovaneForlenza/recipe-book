@@ -272,9 +272,8 @@ CHICKEN
     title: "Rice Chicken",
     category: "lunch/dinner",
     price: 15.99,
-    img: "https://i.ytimg.com/vi/rMp9-LIClHg/maxresdefault.jpg",
+    img: "https://catracalivre.com.br/cdn-cgi/image/f=auto,q=60,w=640,h=360,fit=cover/wp-content/uploads/2020/12/img-5007.jpg",
     desc: `I'm baby woke mlkshk wolf bitters live-edge blue bottle, hammock freegan copper mug whatever cold-pressed `,
-    img: "https://dietaereceitas.com.br/wp-content/uploads/2019/04/panqueca-de-frango-low-carb.jpg",
     ingredients: [
       "4 boneless chicken breasts, diced",
       "3 eggs",
@@ -339,22 +338,34 @@ CHICKEN
   //   /*
   // BEEF
   // Hambuger
-  //     {
-  //       id: "hamburger",
-  //       title: "Hamburger",
-  //       category: "lunch/dinner",
-  //       img: "https://makeyourmeals.com/wp-content/uploads/2019/03/air-fryer-hamburger-735x490.jpg",
-  //       ingredients: [
-  //         "500g ground beef",
-  //         "1 teaspoon garlic powder",
-  //         "1 cup soy sauce",
-  //       ],
-  //       steps: [],
-  //       prepTime: "15 min",
-  //       cookTime: "30 min",
-  //       spicy: 0,
-  //       servings: 4,
-  //     },
+  {
+    id: "hamburger",
+    title: "Hamburger",
+    category: "lunch/dinner",
+    img: "https://makeyourmeals.com/wp-content/uploads/2019/03/air-fryer-hamburger-735x490.jpg",
+    ingredients: [
+      "500g ground beef",
+      "1 teaspoon garlic powder",
+      "1 cup soy sauce",
+    ],
+    steps: [
+      "Cook the chicken breast untill all the water from the chicken is drained",
+      "Add the tomato sauce and water to the pan. Use 2 units of water for every unit of tomato sauce",
+      "Add the corn niblets can",
+      "Once it starts boiling, add ketchup, mostard and worcestershire sauce to taste",
+      "Cook it for 5-10 min or until the chicken is soft",
+      "Mix the creamcheese with a little bit of milk. Whisk the mixture untill dissolved",
+      "Turn off the head, add the creamcheese mixture and mix well",
+      "Serve the dish over rice and add Hickory Sticks to taste",
+    ],
+    dificulty: "Easy",
+    servings: 4,
+    totalTime: "45",
+    cookTime: "30",
+    prepTime: "15",
+    spicy: 0,
+    tags: ["Beef", "Lunch", "Dinner"],
+  },
 
   //   /*
   // PASTA

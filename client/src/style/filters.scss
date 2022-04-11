@@ -1,11 +1,12 @@
 @import "./global.scss";
 
 .filters-container {
-  // width: 700px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  transition: all 0.5s;
+  overflow: hidden;
   .line {
     display: flex;
     align-items: flex-start;
@@ -15,13 +16,16 @@
     .filters-group {
       margin: 10px;
       .title {
-        color: red;
+        color: $clrDarkGold;
+        font-size: 25px;
       }
       .filter {
         display: flex;
         align-items: center;
         justify-content: flex-start;
         margin: 5px 0;
+        text-transform: capitalize;
+
         cursor: pointer;
         .cx-box {
           display: inline-block;
@@ -73,12 +77,22 @@
   }
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (max-width: 700px) {
   .filters-container {
-    // display: flex;
-    // align-items: flex-start;
-    // justify-content: center;
-    // flex-direction: row;
-    // gap: 50px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    width: 200px;
+    .line {
+      width: 100%;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: center;
+      margin-bottom: 5px;
+    }
+    .line.button {
+      align-items: center;
+    }
   }
 }

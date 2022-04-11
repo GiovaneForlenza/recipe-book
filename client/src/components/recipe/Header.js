@@ -13,9 +13,10 @@ function Header({ recipe, caller }) {
   }
   return (
     <div className="header">
-      <div className="img" style={{ backgroundImage: `url(${recipe.img})` }}>
-        {/* <img src={recipe.img} alt="" /> */}
-      </div>
+      <div
+        className="img"
+        style={{ backgroundImage: `url(${recipe.img})` }}
+      ></div>
       <div className="header-info">
         <div className="title">
           <h1>{recipe.title}</h1>

@@ -2,25 +2,14 @@ import React, { useContext } from "react";
 
 import { FiltersContext } from "../../contexts/FiltersContext";
 import { RecipeInfoContext } from "../../contexts/RecipeInfoContext";
-import { RecipesInMenuContext } from "../../contexts/RecipesInMenuContext";
 
 import "../../style/filters.scss";
 
-const Filters = ({ handleHamburgerClick }) => {
-  const {
-    categoryCheckboxesSelected,
-    ingredientCheckboxesSelected,
-    handleClick,
-    resetFilters,
-    setLastSelectedFilter,
-    lastSelectedFilter,
-    filters,
-    updateBoxSelected,
-  } = useContext(FiltersContext);
+const Filters = () => {
+  const { resetFilters, setLastSelectedFilter, filters } =
+    useContext(FiltersContext);
 
   const { categories, ingredients } = useContext(RecipeInfoContext);
-
-  const { filterRecipes } = useContext(RecipesInMenuContext);
 
   return (
     <div className="filters-container div-invisible" id="filters_container">
@@ -52,8 +41,6 @@ const Filters = ({ handleHamburgerClick }) => {
                 key={id}
                 onClick={() => {
                   setLastSelectedFilter(ingredient);
-
-                  // handleHamburgerClick();
                 }}
               >
                 <div className="cx-box" id={`${ingredient}-cxbox`}></div>
@@ -64,14 +51,11 @@ const Filters = ({ handleHamburgerClick }) => {
         </div>
       </div>
       <div className="line button">
-        {categoryCheckboxesSelected.length !== 0 ||
-        ingredientCheckboxesSelected.length !== 0 ? (
+        {filters.length > 0 ? (
           <div
             className="btn-reset"
             onClick={() => {
               resetFilters();
-
-              // handleHamburgerClick();
             }}
           >
             Reset

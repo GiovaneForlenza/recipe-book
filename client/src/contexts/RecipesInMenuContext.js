@@ -8,12 +8,12 @@ export const RecipesInMenuContext = createContext();
 export const RecipesInMenuContextProvider = (props) => {
   const { categories, ingredients } = useContext(RecipeInfoContext);
 
-  const { categoryCheckboxesSelected, ingredientCheckboxesSelected } =
-    useContext(FiltersContext);
+  const { filters, lastSelectedFilter } = useContext(FiltersContext);
 
   const [allRecipes, setAllRecipes] = useState(recipes);
 
   const [recipesInMenu, setRecipesInMenu] = useState(recipes);
+  let newRecipes = [];
 
   //#region THINGS I DONT NEED
   // const [isAllSelected, setIsAllSelected] = useState(true);
@@ -74,6 +74,28 @@ export const RecipesInMenuContextProvider = (props) => {
   //   setRecipesInMenu(newRecepies);
   // };
   //#endregion
+
+  useEffect(() => {
+    if (!filters.length > 0) {
+      setRecipesInMenu(allRecipes);
+    } else {
+      setRecipesInMenu([]);
+      newRecipes = [];
+      filters.map((filter) => {
+        newRecipes = newRecipes.concat(
+          allRecipes.filter((recipe) => recipe.category === filter)
+        );
+        allRecipes.forEach((recepie) => {
+          recepie.ingredients.forEach((recIngredient) => {
+            if (recIngredient.includes(filter)) {
+              newRecipes.push(recepie);
+            }
+          });
+        });
+      });
+      setRecipesInMenu(newRecipes);
+    }
+  }, [filters]);
 
   return (
     <RecipesInMenuContext.Provider

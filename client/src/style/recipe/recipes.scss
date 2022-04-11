@@ -1,5 +1,11 @@
 @import "../global.scss";
 
+.no-recipe-container {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .recepies {
   display: grid;
   margin: 0 auto;

@@ -8,13 +8,17 @@ import { RecipesInMenuContext } from "../../contexts/RecipesInMenuContext";
 const Recipes = ({}) => {
   const { recipesInMenu } = useContext(RecipesInMenuContext);
   if (recipesInMenu.length < 1) {
-    return <h1>Nothing to see here</h1>;
+    return (
+      <div className="no-recipe-container">
+        <h1>Nothing to see here</h1>
+      </div>
+    );
   }
   return (
     <div className="recipes">
       {!recipesInMenu ? <h1>No recipes found</h1> : null}
-      {recipesInMenu.map((recipe) => {
-        return <Header recipe={recipe} key={recipe.id} caller={"recipes"} />;
+      {recipesInMenu.map((recipe, id) => {
+        return <Header recipe={recipe} key={id} caller={"recipes"} />;
       })}
     </div>
   );

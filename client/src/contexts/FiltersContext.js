@@ -26,6 +26,7 @@ export const FiltersContextProvider = (props) => {
     setFilters([]);
     setLastSelectedFilter("");
     setFilteredRecipes([]);
+    updateBoxSelected();
   }
 
   function handleClick() {}
