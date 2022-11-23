@@ -1,14 +1,14 @@
 const recepies = [
-  /*
-CHICKEN
-*/
-  // Strogonoff       DONE
+  //#region Lunch / Dinner
+
+  //#region Chicken
+
+  // Strogonoff
   {
     id: "chicken-strogonoff",
     title: "Chicken Strogonoff",
     category: "lunch/dinner",
-    price: 15.99,
-    img: "https://www.unileverfoodsolutions.com.br/dam/global-ufs/mcos/SLA/calcmenu/recipes/BR-recipes/chicken-&-other-poultry-dishes/strogonoff-de-frango/main-header.jpg",
+    img: "chicken-strogonoff.jpg",
     ingredients: [
       "4 boneless chicken breasts, diced",
       "350ml totamo sauce",
@@ -29,7 +29,7 @@ CHICKEN
       "Turn off the head, add the creamcheese mixture and mix well",
       "Serve the dish over rice and add Hickory Sticks to taste",
     ],
-    dificulty: "Easey",
+    complexity: "Easy",
     servings: 4,
     totalTime: "45",
     cookTime: "30",
@@ -37,12 +37,12 @@ CHICKEN
     spicy: 0,
     tags: ["Chicken", "Lunch", "Dinner"],
   },
-  // Chicken Teryaki      DONE
+  // Teryaki
   {
-    id: "chicken-teryaki",
-    title: "Chicken Teryaki",
+    id: "chicken-teriyaki",
+    title: "Chicken Teriyaki",
     category: "lunch/dinner",
-    img: "https://www.eatwell101.com/wp-content/uploads/2020/10/Instant-Pot-Chicken-Teriyaki-recipe-3.jpg",
+    img: "chicken-teriyaki.jpg",
     ingredients: [
       "4 boneless chicken breasts",
       "1 teaspoon garlic powder",
@@ -62,7 +62,7 @@ CHICKEN
       "If the sauce has not thickened, dissolve 1-3 tablespoons of corn starch in water and add to the skillet. Mix well",
       "Serve with rice. Potato wedges go really well with this recipe.",
     ],
-    dificulty: "Easy",
+    complexity: "Easy",
     servings: 4,
     totalTime: "45",
     cookTime: "30",
@@ -70,12 +70,12 @@ CHICKEN
     spicy: 0,
     tags: ["Chicken", "Lunch", "Dinner"],
   },
-  // Chicken Milanese DONE
+  // Milanese
   {
     id: "chicken-milanese",
     title: "Chicken Milanese",
     category: "lunch/dinner",
-    img: "http://www.saboresajinomoto.com.br/uploads/images/recipes/frango-a-milanesa.jpg",
+    img: "chicken-milanese.jpg",
     ingredients: [
       "4 boneless chicken breasts",
       "3 eggs",
@@ -92,7 +92,7 @@ CHICKEN
       "When both sides are done, transfer the chicken to a plate with paper towel and let it sit.",
       "To serve, add 1 piece of chicken to a plate, with rice. Potato wedges make a great side for this dish.",
     ],
-    dificulty: "Medium",
+    complexity: "Medium",
     servings: 6,
     totalTime: "35",
     cookTime: "10",
@@ -100,12 +100,12 @@ CHICKEN
     spicy: 0,
     tags: ["Chicken", "Lunch", "Dinner"],
   },
-  // Chicken Parmegiana     DONE
+  // parmigiana
   {
-    id: "chicken-parmegiana",
-    title: "Chicken Parmegiana",
+    id: "chicken-parmigiana",
+    title: "Chicken Parmigiana",
     category: "lunch/dinner",
-    img: "https://i.ytimg.com/vi/LmKPPuEI-4o/maxresdefault.jpg",
+    img: "chicken-parmigiana.jpg",
     ingredients: [
       "4 boneless chicken breasts",
       "3 eggs",
@@ -122,7 +122,7 @@ CHICKEN
       "When both sides are done, transfer the chicken to a plate with paper towel and let it sit.",
       "To serve, add 1 piece of chicken to a plate, with rice. Potato wedges make a great side for this dish.",
     ],
-    dificulty: "Medium",
+    complexity: "Medium",
     servings: 6,
     totalTime: "35",
     cookTime: "10",
@@ -130,12 +130,12 @@ CHICKEN
     spicy: 0,
     tags: ["Chicken", "Lunch", "Dinner"],
   },
-  // Chicken w/ Orange Sauce DONE MISSING IMG
+  // Chicken w/ Orange Sauce
   {
     id: "chicken-orange-sauce",
     title: "Chicken w/ Orange sauce",
     category: "lunch/dinner",
-    img: "https://www.unileverfoodsolutions.com.br/dam/global-ufs/mcos/SLA/calcmenu/recipes/BR-recipes/chicken-&-other-poultry-dishes/strogonoff-de-frango/main-header.jpg",
+    img: "orange-sauce-chicken.jpg",
     ingredients: [
       "4 boneless chicken breast",
       "400g sliced mozzarella",
@@ -158,7 +158,7 @@ CHICKEN
       "Add the chicken back and make sure all of it gets covered in the sauce. Let it sit on low heat for 5 minutes.",
       "Serve on a plate with rice. Potato wedges go really well as a side.",
     ],
-    dificulty: "Medium",
+    complexity: "Medium",
     servings: 6,
     totalTime: "55",
     cookTime: "20",
@@ -166,11 +166,12 @@ CHICKEN
     spicy: 0,
     tags: ["Chicken", "Lunch", "Dinner"],
   },
+  // Chicken Pie
   {
     id: "chicken-pie",
     title: "Chicken Pie",
     category: "lunch/dinner",
-    img: "http://www.saboresajinomoto.com.br/uploads/images/recipes/torta-de-frango-com-repolho.jpg",
+    img: "chicken-pie.jpg",
     ingredients: [
       "4 boneless chicken breasts",
       "4 tablespoons vegetable oil",
@@ -190,7 +191,7 @@ CHICKEN
       "Bake it for 20-30 minutes or until golden-brown.",
       "Let it cool down for 5 minutes. Cut small quares to serve.",
     ],
-    dificulty: "Easy",
+    complexity: "Easy",
     servings: 4,
     totalTime: "65",
     cookTime: "30",
@@ -203,9 +204,7 @@ CHICKEN
     id: "chicken-pancake",
     title: "Chicken Pancake",
     category: "lunch/dinner",
-    price: 15.99,
-    img: "https://570341-1841894-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2020/12/receita-panqueca-de-frango.jpg",
-    desc: `I'm baby woke mlkshk wolf bitters live-edge blue bottle, hammock freegan copper mug whatever cold-pressed `,
+    img: "chicken-pancake.jpg",
     ingredients: [
       "4 boneless chicken breasts, diced",
       "350ml totamo sauce",
@@ -226,20 +225,19 @@ CHICKEN
       "Turn off the head, add the creamcheese mixture and mix well",
       "Serve the dish over rice and add Hickory Sticks to taste",
     ],
+    complexity: "Easy",
+    servings: 4,
     totalTime: "45",
     prepTime: "15",
     cookTime: "30",
     spicy: 0,
-    servings: 4,
   },
   // Fricasset
   {
     id: "chicken-fricassee",
     title: "Chicken Fricassee",
     category: "lunch/dinner",
-    price: 15.99,
-    img: "https://vivareceita-cdn.s3.amazonaws.com/uploads/2021/05/Aprenda-como-fazer-fricasse-de-frango-simples-e-cremoso.-Fonte-Isamara-Amancio-1.jpg",
-    desc: `I'm baby woke mlkshk wolf bitters live-edge blue bottle, hammock freegan copper mug whatever cold-pressed `,
+    img: "chicken-fricassee.jpg",
     ingredients: [
       "4 boneless chicken breasts, diced",
       "350ml totamo sauce",
@@ -260,20 +258,19 @@ CHICKEN
       "Turn off the head, add the creamcheese mixture and mix well",
       "Serve the dish over rice and add Hickory Sticks to taste",
     ],
+    complexity: "Easy",
+    servings: 4,
     totalTime: "45",
     prepTime: "15",
     cookTime: "30",
     spicy: 0,
-    servings: 4,
   },
-  // Rice Chicken
+  // Cheesy Rice Chicken
   {
-    id: "rice-chicken",
-    title: "Rice Chicken",
+    id: "cheesy-rice-chicken",
+    title: "Cheesy Rice Chicken",
     category: "lunch/dinner",
-    price: 15.99,
-    img: "https://catracalivre.com.br/cdn-cgi/image/f=auto,q=60,w=640,h=360,fit=cover/wp-content/uploads/2020/12/img-5007.jpg",
-    desc: `I'm baby woke mlkshk wolf bitters live-edge blue bottle, hammock freegan copper mug whatever cold-pressed `,
+    img: "cheesy-rice-chicken.jpg",
     ingredients: [
       "4 boneless chicken breasts, diced",
       "3 eggs",
@@ -293,7 +290,7 @@ CHICKEN
       "In a skillet add a dash of vegetable oil. When hot use a ladle to pour the batter into the pan. Cook on both sides until golden-brown. Set it asside",
       "Once all the pancakes are cooked add a little of the chicken mixture to one of the sides, top it with cheese and roll tightly. Serve hot.",
     ],
-    dificulty: "Easy",
+    complexity: "Easy",
     servings: 4,
     totalTime: "45",
     cookTime: "30",
@@ -301,177 +298,33 @@ CHICKEN
     spicy: 0,
     tags: ["Chicken", "Lunch", "Dinner"],
   },
-  //   // Chicken w/ Caramelized Onion
-  //   {
-  //     id: "chicken-caramelized-onion",
-  //     title: "Chicken w/ Caramelized Onion",
-  //     category: "lunch/dinner",
-  //     price: 15.99,
-  //     img: "https://www.unileverfoodsolutions.com.br/dam/global-ufs/mcos/SLA/calcmenu/recipes/BR-recipes/chicken-&-other-poultry-dishes/strogonoff-de-frango/main-header.jpg",
-  //     desc: `I'm baby woke mlkshk wolf bitters live-edge blue bottle, hammock freegan copper mug whatever cold-pressed `,
-  //     ingredients: [
-  //       "4 boneless chicken breasts, diced",
-  //       "350ml totamo sauce",
-  //       "1 corn niblets can",
-  //       "250g creamcheese",
-  //       "Ketchup",
-  //       "Mostard",
-  //       "Worcestershire sauce",
-  //       "Hickory sticks",
-  //     ],
-  //     steps: [
-  //       "Cook the chicken breast untill all the water from the chicken is drained",
-  //       "Add the tomato sauce and water to the pan. Use 2 units of water for every unit of tomato sauce",
-  //       "Add the corn niblets can",
-  //       "Once it starts boiling, add ketchup, mostard and worcestershire sauce to taste",
-  //       "Cook it for 5-10 min or until the chicken is soft",
-  //       "Mix the creamcheese with a little bit of milk. Whisk the mixture untill dissolved",
-  //       "Turn off the head, add the creamcheese mixture and mix well",
-  //       "Serve the dish over rice and add Hickory Sticks to taste",
-  //     ],
-  //     prepTime: "15 min",
-  //     cookTime: "30 min",
-  //     spicy: 0,
-  //     servings: 4,
-  //   },
 
-  //   /*
-  // BEEF
-  // Hambuger
-  {
-    id: "hamburger",
-    title: "Hamburger",
-    category: "lunch/dinner",
-    img: "https://makeyourmeals.com/wp-content/uploads/2019/03/air-fryer-hamburger-735x490.jpg",
-    ingredients: [
-      "500g ground beef",
-      "1 teaspoon garlic powder",
-      "1 cup soy sauce",
-    ],
-    steps: [
-      "Cook the chicken breast untill all the water from the chicken is drained",
-      "Add the tomato sauce and water to the pan. Use 2 units of water for every unit of tomato sauce",
-      "Add the corn niblets can",
-      "Once it starts boiling, add ketchup, mostard and worcestershire sauce to taste",
-      "Cook it for 5-10 min or until the chicken is soft",
-      "Mix the creamcheese with a little bit of milk. Whisk the mixture untill dissolved",
-      "Turn off the head, add the creamcheese mixture and mix well",
-      "Serve the dish over rice and add Hickory Sticks to taste",
-    ],
-    dificulty: "Easy",
-    servings: 4,
-    totalTime: "45",
-    cookTime: "30",
-    prepTime: "15",
-    spicy: 0,
-    tags: ["Beef", "Lunch", "Dinner"],
-  },
+  //#endregion
 
-  //   /*
-  // PASTA
-  // */
-  //   // Cheesy Pasta
-  {
-    id: "cheesy-pasta",
-    title: "Cheesy pasta",
-    category: "lunch/dinner",
-    img: "https://receitatodahora.com.br/wp-content/uploads/2017/08/macarrao-de-panela-de-pressao-simples.jpg",
-    ingredients: [
-      "500g corkscrew pasta",
-      "350ml tomato sauce",
-      "400g muzzarella cheese (diced or shredded)",
-      "400g ham or turkey breast (diced or sliced)",
-      "250g creamcheese",
-      "Seasoning to taste",
-    ],
-    steps: [
-      "Cook the pasta until desired softness",
-      "Drain pasta and add the tomato sauce. Use 2 units of water to every unit of sauce",
-      "Let mixture boil on medium heat",
-      "Mix the creamcheese with a little bit of milk. Wisk it until dissolved",
-      "Mix the creamcheese, the cheese and the ham/turkey breask into a bowl",
-      "Add the pasta to the bowl, mix well",
-      "Optional: Add shredded mozzarella on top and let it melt",
-    ],
-    prepTime: "15 min",
-    cookTime: "30 min",
-    spicy: 0,
-    servings: 4,
-  },
-  //   // Oven Pasta
-  //   {
-  //     id: "oven-pasta",
-  //     title: "Oven Pasta",
-  //     category: "lunch/dinner",
-  //     price: 15.99,
-  //     img: "https://www.unileverfoodsolutions.com.br/dam/global-ufs/mcos/SLA/calcmenu/recipes/BR-recipes/chicken-&-other-poultry-dishes/strogonoff-de-frango/main-header.jpg",
-  //     desc: `I'm baby woke mlkshk wolf bitters live-edge blue bottle, hammock freegan copper mug whatever cold-pressed `,
-  //     ingredients: [
-  //       "500g corkscrew pasta",
-  //       "350ml tomato sauce",
-  //       "400g muzzarella cheese (diced or sliced)",
-  //       "400g ham or turkey breast (diced or sliced)",
-  //       "250g creamcheese",
-  //       "Seasoning to taste",
-  //     ],
-  //     steps: [
-  //       "Cook the chicken breast untill all the water from the chicken is drained",
-  //       "Add the tomato sauce and water to the pan. Use 2 units of water for every unit of tomato sauce",
-  //       "Add the corn niblets can",
-  //       "Once it starts boiling, add ketchup, mostard and worcestershire sauce to taste",
-  //       "Cook it for 5-10 min or until the chicken is soft",
-  //       "Mix the creamcheese with a little bit of milk. Whisk the mixture untill dissolved",
-  //       "Turn off the head, add the creamcheese mixture and mix well",
-  //       "Serve the dish over rice and add Hickory Sticks to taste",
-  //     ],
-  //     prepTime: "15 min",
-  //     cookTime: "30 min",
-  //     spicy: 0,
-  //     servings: 4,
-  //   },
-  //   // Pasta w/ White Sauce
-  //   {
-  //     id: "pasta-white-sauce",
-  //     title: "Pasta w/ White Sauce",
-  //     category: "lunch/dinner",
-  //     price: 15.99,
-  //     img: "https://www.unileverfoodsolutions.com.br/dam/global-ufs/mcos/SLA/calcmenu/recipes/BR-recipes/chicken-&-other-poultry-dishes/strogonoff-de-frango/main-header.jpg",
-  //     desc: `I'm baby woke mlkshk wolf bitters live-edge blue bottle, hammock freegan copper mug whatever cold-pressed `,
-  //     ingredients: [
-  //       "500g corkscrew pasta",
-  //       "350ml tomato sauce",
-  //       "400g muzzarella cheese (diced or sliced)",
-  //       "400g ham or turkey breast (diced or sliced)",
-  //       "250g creamcheese",
-  //       "Seasoning to taste",
-  //     ],
-  //     steps: [
-  //       "Cook the chicken breast untill all the water from the chicken is drained",
-  //       "Add the tomato sauce and water to the pan. Use 2 units of water for every unit of tomato sauce",
-  //       "Add the corn niblets can",
-  //       "Once it starts boiling, add ketchup, mostard and worcestershire sauce to taste",
-  //       "Cook it for 5-10 min or until the chicken is soft",
-  //       "Mix the creamcheese with a little bit of milk. Whisk the mixture untill dissolved",
-  //       "Turn off the head, add the creamcheese mixture and mix well",
-  //       "Serve the dish over rice and add Hickory Sticks to taste",
-  //     ],
-  //     prepTime: "15 min",
-  //     cookTime: "30 min",
-  //     spicy: 0,
-  //     servings: 4,
-  //   },
+  //#region Beef
+  //a
+  //#endregion
 
-  //
-  // SIDES
-  //
-  // Wedges
+  //#region Pasta
+  // a
+  //#endregion
+
+  //#endregion
+
+  //#region Sides / Complements
+
+  //#region Salad
+  // a
+  //#endregion
+
+  //#region Potato
+
+  // Potato Wedges
   {
     id: "potato-wedges",
     title: "Potato Wedges",
     category: "side",
-    price: 6.99,
-    img: "https://healthyfitnessmeals.com/wp-content/uploads/2020/05/instagram-In-Stream_Square___Baked-potato-wedges-4.jpg",
-    desc: `ombucha chillwave fanny pack 3 wolf moon street art photo booth before they sold out organic viral.`,
+    img: "potato-wedges.jpg",
     ingredients: [
       "4 potatoes russet",
       "Paprika, salt, pepper, cumin to taste",
@@ -495,5 +348,33 @@ CHICKEN
     spicy: 0,
     servings: 4,
   },
+
+  //#endregion
+
+  //#region Sides
+  // a
+  //#endregion
+
+  //#endregion
+
+  //#region Drinks
+
+  //#region Drinks
+  // a
+  //#endregion
+
+  //#region Cocktails
+  // a
+  //#endregion
+
+  //#endregion
+
+  //#region Sweets
+
+  //#region Deserts
+  //a
+  //#endregion
+
+  //#endregion
 ];
 export default recepies;

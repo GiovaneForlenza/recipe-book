@@ -10,7 +10,7 @@ const Recipes = ({}) => {
   if (recipesInMenu.length < 1) {
     return (
       <div className="no-recipe-container">
-        <h1>Nothing to see here</h1>
+        <h1>There's nothing to see here</h1>
       </div>
     );
   }

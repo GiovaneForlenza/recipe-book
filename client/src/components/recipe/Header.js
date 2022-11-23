@@ -11,11 +11,14 @@ function Header({ recipe, caller }) {
   function handleClick() {
     setIsRecepieFavorite(!isRecepieFavorite);
   }
+
   return (
     <div className="header">
       <div
         className="img"
-        style={{ backgroundImage: `url(${recipe.img})` }}
+        style={{
+          backgroundImage: `url(${process.env.PUBLIC_URL}/images/cover-photos/${recipe.img})`,
+        }}
       ></div>
       <div className="header-info">
         <div className="title">
@@ -24,13 +27,13 @@ function Header({ recipe, caller }) {
         <div className="details">
           <div className="left">
             <div className="line">
-              Level:{" "}
-              <span>
+              Complexity: {recipe.complexity}
+              {/* <span>
                 <AiTwotoneStar />
                 <AiTwotoneStar />
                 <AiTwotoneStar />
                 <BsStarHalf />
-              </span>
+              </span> */}
             </div>
             <div className="line">
               Yield: <span>{recipe.servings} servings</span>
@@ -38,13 +41,13 @@ function Header({ recipe, caller }) {
           </div>
           <div className="right">
             <div className="line">
-              Total: <span>{recipe.totalTime} min</span>
+              Prep Time: <span>{recipe.prepTime} min</span>
             </div>
             <div className="line">
-              Cook: <span>{recipe.cookTime} min</span>
+              Cook Time: <span>{recipe.cookTime} min</span>
             </div>
             <div className="line">
-              Prep: <span>{recipe.prepTime} min</span>
+              Total Time: <span>{recipe.totalTime} min</span>
             </div>
           </div>
         </div>
