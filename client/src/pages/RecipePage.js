@@ -51,7 +51,7 @@ const SingleRecipe = () => {
       <section className="section recipe-page">
         <div className="page-header">
           <div className="page-title">
-            <h2>Recepie</h2>
+            <h2>Receita</h2>
             <div className="underline"></div>
           </div>
           <Navigation />
@@ -62,7 +62,7 @@ const SingleRecipe = () => {
           <div className="content">
             <div className="ingredients">
               <div className="title">
-                <h1>Ingredients</h1>
+                <h1>Ingredientes</h1>
               </div>
               {singleRecipe.ingredients.map((ingredient, id) => {
                 return (
@@ -88,7 +88,7 @@ const SingleRecipe = () => {
             </div>
             <div className="intructions">
               <div className="title">
-                <h1>Intructions</h1>
+                <h1>Modo de preparo</h1>
               </div>
               {singleRecipe.steps.map((step, id) => {
                 return (
