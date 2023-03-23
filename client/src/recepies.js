@@ -8,7 +8,7 @@ const recepies = [
     id: "chicken-stroganoff",
     title: "Strogonofe de frango",
     category: "lunch/dinner",
-    img: "chicken-stroganoff.jpg",
+    img: "chicken-strogonoff.jpg",
     ingredients: [
       "3 peitos de frango em cubos",
       "300g molho de tomate",
