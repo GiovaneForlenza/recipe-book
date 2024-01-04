@@ -75,6 +75,21 @@
       }
     }
   }
+  .random-recipe {
+    padding: 5px 15px;
+    border-radius: 5px;
+    background: $clrGold;
+    transition: 0.3s;
+    margin-bottom: 10px;
+    .span {
+      text-decoration: none;
+      color: #000;
+    }
+    &:hover {
+      background: $clrDarkGold;
+      cursor: pointer;
+    }
+  }
 }
 
 @media screen and (max-width: 700px) {

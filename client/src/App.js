@@ -11,27 +11,31 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { FiltersContextProvider } from "./contexts/FiltersContext";
 import { RecipesInMenuContextProvider } from "./contexts/RecipesInMenuContext";
 import { RecipeInfoContextProvider } from "./contexts/RecipeInfoContext";
+import RandomRecipes from "./pages/RandomRecipes";
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/">
-          <RecipeInfoContextProvider>
-            <FiltersContextProvider>
-              <RecipesInMenuContextProvider>
+    <RecipeInfoContextProvider>
+      <FiltersContextProvider>
+        <RecipesInMenuContextProvider>
+          <Router>
+            <Switch>
+              <Route exact path="/">
                 <Home />
-              </RecipesInMenuContextProvider>
-            </FiltersContextProvider>
-          </RecipeInfoContextProvider>
-        </Route>
-        <Route path="/recipe/:id">
-          <RecipePage />
-        </Route>
-        <Route path="/create/">
-          <CreateRecipe />
-        </Route>
-      </Switch>
-    </Router>
+              </Route>
+              <Route path="/recipe/:id">
+                <RecipePage />
+              </Route>
+              <Route path="/create/">
+                <CreateRecipe />
+              </Route>
+              <Route path="/random-recipes">
+                <RandomRecipes />
+              </Route>
+            </Switch>
+          </Router>
+        </RecipesInMenuContextProvider>
+      </FiltersContextProvider>
+    </RecipeInfoContextProvider>
   );
 }
 

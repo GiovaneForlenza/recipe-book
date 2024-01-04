@@ -5,6 +5,8 @@ import { RecipeInfoContext } from "../../contexts/RecipeInfoContext";
 
 import "../../style/filters.scss";
 
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
+
 const Filters = () => {
   const { resetFilters, setLastSelectedFilter, filters } =
     useContext(FiltersContext);
@@ -13,54 +15,63 @@ const Filters = () => {
 
   return (
     <div className="filters-container div-invisible" id="filters_container">
-      <div className="line">
-        <div className="filters-group" id="category-filter">
-          <h3 className="title">Categories</h3>
+      {/* <div className="filter-list">
+        <div className="line">
+          <div className="filters-group" id="category-filter">
+            <h3 className="title">Categories</h3>
 
-          {categories.map((category, id) => {
-            return (
-              <div
-                className="filter"
-                key={id}
-                onClick={() => {
-                  setLastSelectedFilter(category);
-                }}
-              >
-                <div className="cx-box" id={`${category}-cxbox`}></div>
-                <label>{category}</label>
-              </div>
-            );
-          })}
-        </div>
-        <div className="filters-group" id="ingredient-filter">
-          <h3 className="title">Ingredients</h3>
-          {ingredients.map((ingredient, id) => {
-            return (
-              <div
-                className="filter"
-                key={id}
-                onClick={() => {
-                  setLastSelectedFilter(ingredient);
-                }}
-              >
-                <div className="cx-box" id={`${ingredient}-cxbox`}></div>
-                <label>{ingredient}</label>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-      <div className="line button">
-        {filters.length > 0 ? (
-          <div
-            className="btn-reset"
-            onClick={() => {
-              resetFilters();
-            }}
-          >
-            Reset
+            {categories.map((category, id) => {
+              return (
+                <div
+                  className="filter"
+                  key={id}
+                  onClick={() => {
+                    setLastSelectedFilter(category);
+                  }}
+                >
+                  <div className="cx-box" id={`${category}-cxbox`}></div>
+                  <label>{category}</label>
+                </div>
+              );
+            })}
           </div>
-        ) : null}
+          <div className="filters-group" id="ingredient-filter">
+            <h3 className="title">Ingredients</h3>
+            {ingredients.map((ingredient, id) => {
+              return (
+                <div
+                  className="filter"
+                  key={id}
+                  onClick={() => {
+                    setLastSelectedFilter(ingredient);
+                  }}
+                >
+                  <div className="cx-box" id={`${ingredient}-cxbox`}></div>
+                  <label>{ingredient}</label>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+        <div className="line button">
+          {filters.length > 0 ? (
+            <div
+              className="btn-reset"
+              onClick={() => {
+                resetFilters();
+              }}
+            >
+              Reset
+            </div>
+          ) : null}
+        </div>
+      </div> */}
+      <div className="random-recipe">
+        <span>
+          <Link to={`/random-recipes`} className="span">
+            Receita aleatória
+          </Link>
+        </span>
       </div>
     </div>
   );

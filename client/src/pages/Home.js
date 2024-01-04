@@ -36,7 +36,8 @@ function Home() {
               )}
             </div>
             <div className="">
-              {!isHamburgerOpen ? <h2>Menu</h2> : <h2>Filters</h2>}
+              <h2>Menu</h2>
+              {/* {!isHamburgerOpen ? <h2>Menu</h2> : <h2>Filters</h2>} */}
             </div>
           </div>
           <div className="div-filter">

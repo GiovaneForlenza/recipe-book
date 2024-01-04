@@ -1,0 +1,78 @@
+@import "./global.scss";
+
+.random-recipe-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  border: 1px red solid;
+  .header-btn {
+    width: 100%;
+    padding: 7px;
+    background-color: $clrGold;
+  }
+  .numberOfRecipesHeader {
+    margin-top: 10px;
+    border: 1px solid #000;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    .line {
+      border: 1px solid #000;
+      text-align: center;
+      .number-recipes {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        button {
+          appearance: none;
+          backface-visibility: hidden;
+          background-color: #27ae60;
+          border-radius: 8px;
+          border-style: none;
+          box-shadow: rgba(39, 174, 96, 0.15) 0 4px 9px;
+          box-sizing: border-box;
+          color: #fff;
+          cursor: pointer;
+          display: inline-block;
+          font-family: Inter, -apple-system, system-ui, "Segoe UI", Helvetica,
+            Arial, sans-serif;
+          font-size: 20px;
+          font-weight: 600;
+          letter-spacing: normal;
+          outline: none;
+          overflow: hidden;
+          padding: 0px 20px;
+          position: relative;
+          text-align: center;
+          text-decoration: none;
+          transform: translate3d(0, 0, 0);
+          transition: all 0.3s;
+          user-select: none;
+          -webkit-user-select: none;
+          touch-action: manipulation;
+          vertical-align: top;
+          white-space: nowrap;
+          &:hover {
+            background-color: #1e8449;
+            opacity: 1;
+            transform: translateY(0);
+            transition-duration: 0.35s;
+          }
+
+          &:active {
+            transform: translateY(2px);
+            transition-duration: 0.35s;
+          }
+        }
+        span {
+          font-size: 30px;
+          margin: 0 10px;
+        }
+      }
+    }
+  }
+}
