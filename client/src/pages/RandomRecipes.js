@@ -4,8 +4,30 @@ import "../style/random-recipe.scss";
 import "../style/navigation.scss";
 import Navigation from "../components/Navigation";
 
+import recepies from "../recepies";
+
 function RandomRecipes() {
+  const CATEGORY = "lunch/dinner";
   const [numberOfRecipes, setNumberOfRecipes] = useState(1);
+  const [selectedRandomRecipes, setSelectedRandomRecipes] = useState([]);
+
+  function getListOfRecipes() {
+    for (let index = 0; index < numberOfRecipes; index++) {
+      setSelectedRandomRecipes((selectedRandomRecipes) => [
+        ...selectedRandomRecipes,
+        getRandomRecipe(),
+      ]);
+    }
+    console.log(selectedRandomRecipes);
+  }
+
+  function getRandomRecipe() {
+    return recepies[getRandomNumber()];
+  }
+
+  function getRandomNumber() {
+    return Math.floor(Math.random() * recepies.length + 1);
+  }
   return (
     <div className="random-recipe-container">
       <div className="header-btn">
@@ -20,7 +42,7 @@ function RandomRecipes() {
           >
             Number of recipes
           </h1>
-          <div className="number-recipes">
+          <div className="numberOfRecipes">
             <div className="line">
               <button
                 onClick={() => {
@@ -41,8 +63,16 @@ function RandomRecipes() {
                 +
               </button>
             </div>
-            <button>Get recipes</button>
+            <button className="getRecipes" onClick={getListOfRecipes}>
+              Get recipes
+            </button>
           </div>
+        </div>
+        <div className="randomRecipesContainer">
+          {selectedRandomRecipes.length > 0 &&
+            selectedRandomRecipes.map((randomRecipe, id) => {
+              return <h1 key={id}>{randomRecipe.title}</h1>;
+            })}
         </div>
       </div>
     </div>
