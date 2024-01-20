@@ -337,6 +337,41 @@ const recepies = [
   //#endregion
 
   //#region Sweets
+  {
+    id: "cookies",
+    title: "Cookies de chocolate",
+    category: "sweets",
+    img: "potato-wedges.jpg",
+    ingredients: [
+      "320g farinha de trigo",
+      "225g manteiga",
+      "220g açucar mascavo",
+      "100g açucar refinado",
+      "1 colher de chá de bicarbonato de sódio",
+      "2 colheres de chá de essência de baunílha",
+      "1 ovo",
+      "1 gema",
+      "240g chocolate picado",
+    ],
+    steps: [
+      "Derreter a manteiga, mas não deixar esquentar. Usar em temperatura ambiente",
+      "Cortar a barra de chocolate em pedaços",
+      "Bater o açucar mascavo, o açucar refinado, a manteiga na velocidade média (2-3min)",
+      "Colocar a batedeira na vel. baixa. Adicione o ovo e a gema e a baunílha. Aumente a velocidade e bata novamente",
+      "Colocar uma pitada de sal",
+      "Acrescente a farinha de trigo aos poucos, e misture manualmente",
+      "Coloque o bicarbonato e os pedaços de chocolate. Misture com cuidado",
+      "Descanse 15-30min na geladeira. Boleie 88g. Coloque no congelador",
+      "Unte uma assadeira com bastante espaço entre eles. Aqueça o forno a 180C e cozinhe por 20min",
+    ],
+    complexity: "Fácil",
+    totalTime: "45",
+    prepTime: "15",
+    cookTime: "30",
+    spicy: 0,
+    servings: 12,
+  },
+  //#endregion
 
   //#region Deserts
   //a
