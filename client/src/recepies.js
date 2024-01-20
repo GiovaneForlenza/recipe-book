@@ -371,6 +371,31 @@ const recepies = [
     spicy: 0,
     servings: 12,
   },
+  {
+    id: "pudim-caneca",
+    title: "Pudim de caneca",
+    category: "sweets",
+    img: "potato-wedges.jpg",
+    ingredients: [
+      "1 colher de chá de açucar",
+      "1 colher de chá de água",
+      "1 ovo",
+      "8 colheres de leite condensado",
+      "8 colheres de leite",
+    ],
+    steps: [
+      "Coloque 1 colher de açucar e 1 de água numa caneca. Leve ao microondas de 30 em 30s para caremelizar",
+      "Quando caramelizado o açucar, gire a caneca para que a calda se espalhe nas laterais",
+      "Em uma outra caneca mexa o ovo, adicione o leite condensado e o leite",
+      "Coloque a mistura na caneca caramelizada, e coloque no microondas por 2min",
+    ],
+    complexity: "Fácil",
+    totalTime: "5",
+    prepTime: "3",
+    cookTime: "2",
+    spicy: 0,
+    servings: 1,
+  },
   //#endregion
 
   //#region Deserts
